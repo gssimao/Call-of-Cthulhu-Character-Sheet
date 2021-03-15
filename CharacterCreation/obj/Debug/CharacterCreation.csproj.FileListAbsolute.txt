@@ -1,0 +1,11 @@
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.csprojAssemblyReference.cache
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.Properties.Resources.resources
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.RollDice.resources
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.csproj.GenerateResource.cache
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.csproj.CoreCompileInputs.cache
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\bin\Debug\CharacterCreation.exe.config
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\bin\Debug\CharacterCreation.exe
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\bin\Debug\CharacterCreation.pdb
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.character.resources
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.exe
+C:\Users\DSU\Desktop\CSC 260\Final Project\CharacterCreation\obj\Debug\CharacterCreation.pdb
