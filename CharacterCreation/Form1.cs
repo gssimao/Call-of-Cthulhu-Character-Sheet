@@ -164,6 +164,22 @@ namespace CharacterCreation
         private void Randomize_Click(object sender, EventArgs e)
         {
             Character Investivator = new Character(true);
+            CharName.Text = Investivator.CharName;
+            CharOccupation.Text = Investivator.CharOccupation;
+            CharBirthplace.Text = Investivator.CharBirthplace;
+            CharResidence.Text = Investivator.CharResidence;
+            CharAge.Text = Investivator.CharAge.ToString();
+
+            if (Investivator.CharSex == 1)
+            {
+                Male.Checked = true;
+                Female.Checked = false;
+            }
+            else if (Investivator.CharSex == 2)
+            {
+                Female.Checked = true;
+                Male.Checked = false;
+            }
         }
     }
 }

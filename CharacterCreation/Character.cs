@@ -28,7 +28,6 @@ namespace CharacterCreation
                 {
                     charName = value;
                 }
-                
             }
         }
         string charPlayer;
@@ -52,7 +51,14 @@ namespace CharacterCreation
             }
             set
             {
-                charOccupation = value;
+                if (string.IsNullOrWhiteSpace(value) && RandomizeChar == true)
+                {
+                    charOccupation = SelectOccupation();
+                }
+                else
+                {
+                    charOccupation = value;
+                }
             }
         }
         string charBirthplace;
@@ -88,7 +94,27 @@ namespace CharacterCreation
             }
             set
             {
-                charAge = value;
+                if (value == 0 && RandomizeChar == true)
+                {
+                    charAge = RollingDices(61) + 14;
+                }
+                else
+                {
+                    charAge = value;
+                }
+                    
+            }
+        }
+        int charSex;
+        public int CharSex
+        {
+            get
+            {
+                return charSex;
+            }
+            set
+            {
+                charSex = value;
             }
         }
 
@@ -105,26 +131,21 @@ namespace CharacterCreation
         public Character(bool randomize) // Create a randomized character
         {
             string empty = "";
-            
+            CharSex = RollingDices(3); // 1 = male /// 2 = female;
             RandomizeChar = randomize;
             CharName = empty;
             CharPlayer = empty;
             CharOccupation = empty;
             CharBirthplace = empty;
             CharResidence = empty;
+
             CharAge = 0;
         }
-        int RollingDices(int max)
-        {
-            int roll;
-            roll = DiceRandom.Next(1, max);
-            return roll;
-        }
+
         string SelectName()
         {
             string name = "";
-            int RandomCharSex = RollingDices(3); // 1 = male /// 2 = female
-            if(RandomCharSex == 1)
+            if(CharSex == 1)
             {
                 string[] MaleNames = new string[] 
                 { "",
@@ -177,9 +198,9 @@ namespace CharacterCreation
                     "Maurice",
                     "David",
                     "Robert"}; // 50 names
-                name += MaleNames[RollingDices(51)];
+                name += MaleNames[RollingDices(50)];
             }
-            else if (RandomCharSex == 2)
+            else if (CharSex == 2)
             {
                 string[] FemaleNames = new string[]
                 { "",
@@ -232,7 +253,7 @@ namespace CharacterCreation
                     "Hazel",
                     "Rit",
                     "Mary"}; // 50 names
-                name += FemaleNames[RollingDices(51)];
+                name += FemaleNames[RollingDices(50)];
             }
             string[] Surnames = new string[]
                { "",
@@ -285,9 +306,75 @@ namespace CharacterCreation
                     "Yeske",
                     "Strong",
                     "Swanson"}; // 50 names
-            name += " " + Surnames[RollingDices(51)];
+            name += " " + Surnames[RollingDices(50)];
 
             return name;
+        }
+
+        string SelectOccupation()
+        {
+            string charOccupation = "";
+            string[] Occupations = new string[]
+                { "",
+                    "John",
+                    "James",
+                    "William",
+                    "Charles",
+                    "George",
+                    "Joseph",
+                    "Richard",
+                    "Edward",
+                    "Donald",
+                    "Thomas",
+                    "Frank",
+                    "Harold",
+                    "Paul",
+                    "Raymond",
+                    "Walter",
+                    "Jack",
+                    "Henry",
+                    "Kenneth",
+                    "Arthur",
+                    "Albert",
+                    "Harry",
+                    "Eugene",
+                    "Ralph",
+                    "Howard",
+                    "Willie",
+                    "Fred",
+                    "Francis",
+                    "Herbert",
+                    "Alfred",
+                    "Norman",
+                    "Gerald",
+                    "Bernard",
+                    "Melvin",
+                    "Warren",
+                    "Michael",
+                    "Russell",
+                    "Elmer",
+                    "Lloyd",
+                    "Vernon",
+                    "Clyde",
+                    "Chester",
+                    "Philip",
+                    "Alvin",
+                    "Wayne",
+                    "Lewis",
+                    "Harvey",
+                    "Maurice",
+                    "David",
+                    "Robert"}; // 50 names
+            charOccupation += Occupations[RollingDices(51)];
+
+            return charOccupation;
+        }
+
+        int RollingDices(int max)
+        {
+            int roll;
+            roll = DiceRandom.Next(1, max);
+            return roll;
         }
     }
 }
