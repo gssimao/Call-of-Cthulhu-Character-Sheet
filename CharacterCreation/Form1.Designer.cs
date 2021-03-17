@@ -51,21 +51,21 @@ namespace CharacterCreation
             this.Randomize = new System.Windows.Forms.Button();
             this.CharSTR = new System.Windows.Forms.TextBox();
             this.Label25 = new System.Windows.Forms.Label();
-            this.CharDex = new System.Windows.Forms.TextBox();
+            this.CharDEX = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.CharPow = new System.Windows.Forms.TextBox();
+            this.CharPOW = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.CharEDU = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.CharAPP = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.CharCON = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.CharMoveRate = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.CharINT = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.CharSIZ = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -304,15 +304,15 @@ namespace CharacterCreation
             this.Label25.TabIndex = 20;
             this.Label25.Text = "STR";
             // 
-            // CharDex
+            // CharDEX
             // 
-            this.CharDex.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CharDex.Location = new System.Drawing.Point(448, 223);
-            this.CharDex.Margin = new System.Windows.Forms.Padding(6);
-            this.CharDex.Name = "CharDex";
-            this.CharDex.Size = new System.Drawing.Size(51, 30);
-            this.CharDex.TabIndex = 23;
-            this.CharDex.TextChanged += new System.EventHandler(this.CharDex_TextChanged);
+            this.CharDEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharDEX.Location = new System.Drawing.Point(448, 223);
+            this.CharDEX.Margin = new System.Windows.Forms.Padding(6);
+            this.CharDEX.Name = "CharDEX";
+            this.CharDEX.Size = new System.Drawing.Size(51, 30);
+            this.CharDEX.TabIndex = 23;
+            this.CharDEX.TextChanged += new System.EventHandler(this.CharDex_TextChanged);
             // 
             // label9
             // 
@@ -325,15 +325,15 @@ namespace CharacterCreation
             this.label9.TabIndex = 22;
             this.label9.Text = "DEX";
             // 
-            // CharPow
+            // CharPOW
             // 
-            this.CharPow.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CharPow.Location = new System.Drawing.Point(599, 223);
-            this.CharPow.Margin = new System.Windows.Forms.Padding(6);
-            this.CharPow.Name = "CharPow";
-            this.CharPow.Size = new System.Drawing.Size(51, 30);
-            this.CharPow.TabIndex = 25;
-            this.CharPow.TextChanged += new System.EventHandler(this.CharPow_TextChanged);
+            this.CharPOW.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharPOW.Location = new System.Drawing.Point(599, 223);
+            this.CharPOW.Margin = new System.Windows.Forms.Padding(6);
+            this.CharPOW.Name = "CharPOW";
+            this.CharPOW.Size = new System.Drawing.Size(51, 30);
+            this.CharPOW.TabIndex = 25;
+            this.CharPOW.TextChanged += new System.EventHandler(this.CharPow_TextChanged);
             // 
             // label10
             // 
@@ -346,15 +346,15 @@ namespace CharacterCreation
             this.label10.TabIndex = 24;
             this.label10.Text = "POW";
             // 
-            // textBox4
+            // CharEDU
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(599, 265);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(51, 30);
-            this.textBox4.TabIndex = 31;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.CharEDU.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharEDU.Location = new System.Drawing.Point(599, 265);
+            this.CharEDU.Margin = new System.Windows.Forms.Padding(6);
+            this.CharEDU.Name = "CharEDU";
+            this.CharEDU.Size = new System.Drawing.Size(51, 30);
+            this.CharEDU.TabIndex = 31;
+            this.CharEDU.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label11
             // 
@@ -367,15 +367,15 @@ namespace CharacterCreation
             this.label11.TabIndex = 30;
             this.label11.Text = "EDU";
             // 
-            // textBox5
+            // CharAPP
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(448, 265);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(51, 30);
-            this.textBox5.TabIndex = 29;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.CharAPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharAPP.Location = new System.Drawing.Point(448, 265);
+            this.CharAPP.Margin = new System.Windows.Forms.Padding(6);
+            this.CharAPP.Name = "CharAPP";
+            this.CharAPP.Size = new System.Drawing.Size(51, 30);
+            this.CharAPP.TabIndex = 29;
+            this.CharAPP.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label12
             // 
@@ -388,15 +388,15 @@ namespace CharacterCreation
             this.label12.TabIndex = 28;
             this.label12.Text = "APP";
             // 
-            // textBox6
+            // CharCON
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(290, 265);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(51, 30);
-            this.textBox6.TabIndex = 27;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.CharCON.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharCON.Location = new System.Drawing.Point(290, 265);
+            this.CharCON.Margin = new System.Windows.Forms.Padding(6);
+            this.CharCON.Name = "CharCON";
+            this.CharCON.Size = new System.Drawing.Size(51, 30);
+            this.CharCON.TabIndex = 27;
+            this.CharCON.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label13
             // 
@@ -409,15 +409,15 @@ namespace CharacterCreation
             this.label13.TabIndex = 26;
             this.label13.Text = "CON";
             // 
-            // textBox7
+            // CharMoveRate
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(140, 304);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(37, 30);
-            this.textBox7.TabIndex = 37;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.CharMoveRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharMoveRate.Location = new System.Drawing.Point(140, 304);
+            this.CharMoveRate.Margin = new System.Windows.Forms.Padding(6);
+            this.CharMoveRate.Name = "CharMoveRate";
+            this.CharMoveRate.Size = new System.Drawing.Size(37, 30);
+            this.CharMoveRate.TabIndex = 37;
+            this.CharMoveRate.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label14
             // 
@@ -430,15 +430,15 @@ namespace CharacterCreation
             this.label14.TabIndex = 36;
             this.label14.Text = "Move Rate";
             // 
-            // textBox8
+            // CharINT
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(448, 307);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(51, 30);
-            this.textBox8.TabIndex = 35;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.CharINT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharINT.Location = new System.Drawing.Point(448, 307);
+            this.CharINT.Margin = new System.Windows.Forms.Padding(6);
+            this.CharINT.Name = "CharINT";
+            this.CharINT.Size = new System.Drawing.Size(51, 30);
+            this.CharINT.TabIndex = 35;
+            this.CharINT.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label15
             // 
@@ -451,15 +451,15 @@ namespace CharacterCreation
             this.label15.TabIndex = 34;
             this.label15.Text = "INT";
             // 
-            // textBox9
+            // CharSIZ
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(290, 307);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(51, 30);
-            this.textBox9.TabIndex = 33;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.CharSIZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CharSIZ.Location = new System.Drawing.Point(290, 307);
+            this.CharSIZ.Margin = new System.Windows.Forms.Padding(6);
+            this.CharSIZ.Name = "CharSIZ";
+            this.CharSIZ.Size = new System.Drawing.Size(51, 30);
+            this.CharSIZ.TabIndex = 33;
+            this.CharSIZ.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label16
             // 
@@ -655,21 +655,21 @@ namespace CharacterCreation
             this.Controls.Add(this.CharFellowInv1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.CharMoveRate);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.CharINT);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.CharSIZ);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.CharEDU);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.CharAPP);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.CharCON);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.CharPow);
+            this.Controls.Add(this.CharPOW);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.CharDex);
+            this.Controls.Add(this.CharDEX);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CharSTR);
             this.Controls.Add(this.Label25);
@@ -724,21 +724,21 @@ namespace CharacterCreation
         private System.Windows.Forms.Button Randomize;
         private System.Windows.Forms.TextBox CharSTR;
         private System.Windows.Forms.Label Label25;
-        private System.Windows.Forms.TextBox CharDex;
+        private System.Windows.Forms.TextBox CharDEX;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox CharPow;
+        private System.Windows.Forms.TextBox CharPOW;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox CharEDU;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox CharAPP;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox CharCON;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox CharMoveRate;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox CharINT;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox CharSIZ;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label17;

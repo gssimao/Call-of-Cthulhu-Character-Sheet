@@ -169,6 +169,17 @@ namespace CharacterCreation
             CharBirthplace.Text = Investivator.CharBirthplace;
             CharResidence.Text = Investivator.CharResidence;
             CharAge.Text = Investivator.CharAge.ToString();
+            Characteristic BaseCharacteristc = new Characteristic(true);
+            CharSTR.Text = BaseCharacteristc.CharSTR.ToString();
+            CharDEX.Text = BaseCharacteristc.CharDEX.ToString();
+            CharPOW.Text = BaseCharacteristc.CharPOW.ToString();
+            CharCON.Text = BaseCharacteristc.CharCON.ToString();
+            CharAPP.Text = BaseCharacteristc.CharAPP.ToString();
+            CharEDU.Text = BaseCharacteristc.CharEDU.ToString();
+            CharSIZ.Text = BaseCharacteristc.CharSIZ.ToString();
+            CharINT.Text = BaseCharacteristc.CharINT.ToString();
+            CharMoveRate.Text = BaseCharacteristc.CharMoveRate.ToString();
+
 
             if (Investivator.CharSex == 1)
             {
