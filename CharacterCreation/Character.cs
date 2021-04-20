@@ -10,6 +10,12 @@ namespace CharacterCreation
     {
         public static readonly Random DiceRandom = new Random();
         public bool RandomizeChar = false;
+       
+        
+        /*bool young = false;
+        bool adult = false;
+        bool old = false;*/
+
 
         string charName;
         public string CharName
@@ -116,7 +122,7 @@ namespace CharacterCreation
                 {
                     charAge = value;
                 }
-                    
+
             }
         }
         int charSex;
@@ -132,8 +138,10 @@ namespace CharacterCreation
             }
         }
 
+
         public Character(string charName, string charPlayer, string charOccupation, string charBirthplace, string charResidence, int charAge)
         {
+            RandomizeChar = false;
             CharName = charName;
             CharPlayer = charPlayer;
             CharOccupation = charOccupation;
@@ -142,30 +150,26 @@ namespace CharacterCreation
             CharAge = charAge;
         }
 
-        public Character(bool randomize) // Create a randomized character
+        public Character() // Create a randomized character
         {
             string empty = "";
             CharSex = RollingDices(3); // 1 = male /// 2 = female;
-            RandomizeChar = randomize;
+            RandomizeChar = true;
             CharOccupation = empty;
             CharBirthplace = empty;
             CharResidence = empty;
             CharAge = 0;
             CharName = empty;
             CharPlayer = empty;
-            
-        }
-        public Character()
-        {
-            //Dice Roller
+
         }
 
         string SelectName()
         {
             string name = "";
-            if(CharSex == 1)
+            if (CharSex == 1)
             {
-                string[] MaleNames = new string[] 
+                string[] MaleNames = new string[]
                 { "",
                     "John",
                     "James",
@@ -731,7 +735,6 @@ namespace CharacterCreation
             }
             return name;
         }
-
         string SelectOccupation()
         {
             string charOccupation = "";
@@ -748,7 +751,7 @@ namespace CharacterCreation
                     "Archaeologist",
                     "Architect",
                     "Artist",
-                    "Asylunn Attendant",
+                    "Asylum Attendant",
                     "Assassin",
                     "Athlete",
                     "Author",
@@ -768,7 +771,7 @@ namespace CharacterCreation
                     "Cowboy/girl",
                     "Craftsperson",
                     "Criminal",
-                    "Cult Lider",
+                    "Cult Leader",
                     "Deprogrammer",
                     "Designer",
                     "Dilletante",
@@ -850,7 +853,6 @@ namespace CharacterCreation
 
             return charOccupation;
         }
-
         string SelectBirthPlace()
         {
             string charBirhtPlace = "";
@@ -921,12 +923,93 @@ namespace CharacterCreation
 
             return charResidense;
         }
-
+        public int CalculateMagicPoint(int POW)
+        {
+            int calc = (int)Math.Floor((float)POW / 5);
+            return calc;
+        }
+        public string CalculateDamageBonus(int STR, int SIZ)
+        {
+            int combine = STR + SIZ;
+           if(combine <= 64)
+            {
+                return "-2";
+            }
+           else if(combine >= 65 && combine <= 84 )
+            {
+                return "-1";
+            }
+            else if (combine >= 85 && combine <= 124)
+            {
+                return "None";
+            }
+            else if (combine >= 125 && combine <= 164)
+            {
+                return "+1D4";
+            }
+            else if (combine >= 165)
+            {
+                return "+1D6";
+            }
+            return "";
+        }
+        public string CalculateBuild(int STR, int SIZ)
+        {
+            int combine = STR + SIZ;
+            if (combine <= 64)
+            {
+                return "-2";
+            }
+            else if (combine >= 65 && combine <= 84)
+            {
+                return "-1";
+            }
+            else if (combine >= 85 && combine <= 124)
+            {
+                return "None";
+            }
+            else if (combine >= 125 && combine <= 164)
+            {
+                return "+1";
+            }
+            else if (combine >= 165)
+            {
+                return "+2";
+            }
+            return "";
+        }
+        public int CalculateHP(int SIZ, int CON)
+        {
+            int calc = (int)Math.Floor(((float)SIZ + CON)/10);
+            return calc;
+        }
+        public int CalculateMoveRate(int STR, int DEX, int SIZ)
+        {
+            int mov = 0;
+            if (CharAge > 40)
+            {
+                mov = -1;
+            }
+            if (STR < SIZ && STR < SIZ)
+            {
+                mov += 7;
+            }
+            else if(STR >= SIZ || DEX >= SIZ)
+            {
+                mov += 8;
+            }
+            else if (STR > SIZ && DEX > SIZ)
+            {
+                mov += 9;
+            }
+            return mov;
+        }
         public int RollingDices(int max)
         {
             int roll;
             roll = DiceRandom.Next(1, max);
             return roll;
         }
+
     }
 }

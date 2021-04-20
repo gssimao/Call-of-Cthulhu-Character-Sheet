@@ -16,7 +16,10 @@ namespace CharacterCreation
         int charEDU;
         int charSIZ;
         int charINT;
+        int charLuck;
         int charMoveRate;
+        int charHP;
+        int charMP;
 
         public int CharSTR
         {
@@ -170,6 +173,25 @@ namespace CharacterCreation
 
             }
         }
+        public int CharLuck
+        {
+            get
+            {
+                return charLuck;
+            }
+            set
+            {
+                if (RandomizeChar == true)
+                {
+                    charLuck = SetCharacteristic(true);
+                }
+                else
+                {
+                    charLuck = value;
+                }
+
+            }
+        }
         public int CharMoveRate
         {
             get
@@ -180,7 +202,7 @@ namespace CharacterCreation
             {
                 if (RandomizeChar == true)
                 {
-                    //charMoveRate = SetCharacteristic();
+                    charMoveRate = CalculateMoveRate(CharSTR, CharDEX, CharSIZ);
                 }
                 else
                 {
@@ -189,17 +211,57 @@ namespace CharacterCreation
 
             }
         }
-
-        public static readonly Random DiceRandom = new Random();
-        public int RollingDices(int max)
+        public int CharHP
         {
-            int roll;
-            roll = DiceRandom.Next(1, max);
-            return roll;
+            get
+            {
+                return charHP;
+            }
+            set
+            {
+                charHP = CalculateHP(CharSIZ, CharCON);
+            }
         }
-        public Characteristic (bool Randomize)
+        public int CharMP
         {
+            get
+            {
+                return charMP;
+            }
+            set
+            {
+                charMP = CalculateMagicPoint(CharPOW);
+            }
+        }
 
+        public Characteristic(int STR, int DEX, int POW, int CON, int APP, int EDU, int SIZ, int INT, int LUCK, int MoveRate)
+        {
+            CharSTR = STR;
+            CharDEX = DEX;
+            CharPOW = POW;
+            CharCON = CON;
+            CharAPP = APP;
+            CharEDU = EDU;
+            CharSIZ = SIZ;
+            CharINT = INT;
+            CharLuck = LUCK;
+            CharMoveRate = MoveRate;
+        }
+        public Characteristic(bool randomize)
+        {
+            int randomSet = 999;
+            CharSTR = randomSet;
+            CharDEX = randomSet;
+            CharPOW = randomSet;
+            CharCON = randomSet;
+            CharAPP = randomSet;
+            CharEDU = randomSet;
+            CharSIZ = randomSet;
+            CharINT = randomSet;
+            CharLuck = randomSet;
+            CharMoveRate = randomSet;
+            CharMP = randomSet;
+            CharHP = randomSet;
         }
 
         int SetCharacteristic(bool GiveLastDie)
@@ -212,10 +274,10 @@ namespace CharacterCreation
                 RollResult += 6;
                 Loop += 1;   
             }
-            while(Loop > 3)
+            while(Loop < 3)
             {
-                Loop++;
-               // RollResult += DiceRoll.RollingDices(7);
+               Loop++;
+               RollResult += this.RollingDices(7);
             }
             RollResult *= 5;
             return RollResult;
