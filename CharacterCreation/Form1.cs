@@ -116,7 +116,67 @@ namespace CharacterCreation
         {
 
         }
+        //Skills section
+        private void LawLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
+        }
+        private void RideLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void PsychoanalysisLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void PilotLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void PersuadeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void OpHvMachineLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void OccultLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void NavigateLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void NaturalWorldLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void MedicineLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void MechRepairLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void LocksmithLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void ListenLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void LibraryUseLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        private void PsychologyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
 
         ////// input and ther stuff here
         private void CallDiceRoller_Click(object sender, EventArgs e) // Roll Dice
@@ -147,7 +207,7 @@ namespace CharacterCreation
 
         private void saveChar_Click(object sender, EventArgs e) // save character Button
         {
-            Character Investivator = new Character(CharName.ToString(), CharPlayer.ToString(), CharOccupation.ToString(), CharBirthplace.ToString(), CharResidence.ToString(), int.Parse(CharAge.Text));
+            Character Investigator = new Character(CharName.ToString(), CharPlayer.ToString(), CharOccupation.ToString(), CharBirthplace.ToString(), CharResidence.ToString(), int.Parse(CharAge.Text));
   /*          Characteristic BaseCharacteristc = new Characteristic(CheckIfEmpty(CharSTR.ToString()), CheckIfEmpty(CharDEX.ToString()), CheckIfEmpty(CharPOW.ToString()),
                                                                   CheckIfEmpty(CharCON.ToString()), CheckIfEmpty(CharAPP.ToString()), CheckIfEmpty(CharEDU.ToString()),
                                                                   CheckIfEmpty(CharSIZ.ToString()), CheckIfEmpty(CharINT.ToString()), CheckIfEmpty(CharLuck.ToString()),
@@ -157,37 +217,36 @@ namespace CharacterCreation
 
         private void Randomize_Click(object sender, EventArgs e)
         {
-            Character Investivator = new Character();
-            CharName.Text = Investivator.CharName;
-            CharOccupation.Text = Investivator.CharOccupation;
-            CharBirthplace.Text = Investivator.CharBirthplace;
-            CharResidence.Text = Investivator.CharResidence;
-            CharAge.Text = Investivator.CharAge.ToString();
+            Character Investigator = new Character();
+            CharName.Text = Investigator.CharName;
+            CharOccupation.Text = Investigator.CharOccupation;
+            CharBirthplace.Text = Investigator.CharBirthplace;
+            CharResidence.Text = Investigator.CharResidence;
+            CharAge.Text = Investigator.CharAge.ToString();
 
-            Characteristic BaseCharacteristc = new Characteristic(true);
-            CharSTR.Text = BaseCharacteristc.CharSTR.ToString();
-            CharDEX.Text = BaseCharacteristc.CharDEX.ToString();
-            CharPOW.Text = BaseCharacteristc.CharPOW.ToString();
-            CharCON.Text = BaseCharacteristc.CharCON.ToString();
-            CharAPP.Text = BaseCharacteristc.CharAPP.ToString();
-            CharEDU.Text = BaseCharacteristc.CharEDU.ToString();
-            CharSIZ.Text = BaseCharacteristc.CharSIZ.ToString();
-            CharINT.Text = BaseCharacteristc.CharINT.ToString();
-            CharLuck.Text = BaseCharacteristc.CharLuck.ToString();
-            CharMoveRate.Text = BaseCharacteristc.CharMoveRate.ToString();
-            CharMaxHP.Text = BaseCharacteristc.CharHP.ToString();
-            CharCurrentHP.Text = BaseCharacteristc.CharHP.ToString();
-            CharSanity.Text = BaseCharacteristc.CharPOW.ToString();
-            CharMaxSanity.Text = BaseCharacteristc.CharPOW.ToString();
-            CharMP.Text = BaseCharacteristc.CharMP.ToString();
+            CharSTR.Text = Investigator.charSTR.ToString();
+            CharDEX.Text = Investigator.charDEX.ToString();
+            CharPOW.Text = Investigator.charPOW.ToString();
+            CharCON.Text = Investigator.charCON.ToString();
+            CharAPP.Text = Investigator.charAPP.ToString();
+            CharEDU.Text = Investigator.charEDU.ToString();
+            CharSIZ.Text = Investigator.charSIZ.ToString();
+            CharINT.Text = Investigator.charINT.ToString();
+            CharLuck.Text = Investigator.charLuck.ToString();
+            CharMoveRate.Text = Investigator.charMoveRate.ToString();
+            CharMaxHP.Text = Investigator.charHP.ToString();
+            CharCurrentHP.Text = Investigator.charHP.ToString();
+            CharSanity.Text = Investigator.charPOW.ToString();
+            CharMaxSanity.Text = Investigator.charPOW.ToString();
+            CharMP.Text = Investigator.charMP.ToString();
 
 
-            if (Investivator.CharSex == 1)
+            if (Investigator.CharSex == 1)
             {
                 Male.Checked = true;
                 Female.Checked = false;
             }
-            else if (Investivator.CharSex == 2)
+            else if (Investigator.CharSex == 2)
             {
                 Female.Checked = true;
                 Male.Checked = false;

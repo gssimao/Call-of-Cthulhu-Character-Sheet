@@ -8,19 +8,6 @@ namespace CharacterCreation
 {
     class Characteristic : Character
     {
-        int charSTR;
-        int charDEX;
-        int charPOW;
-        int charCON;
-        int charAPP;
-        int charEDU;
-        int charSIZ;
-        int charINT;
-        int charLuck;
-        int charMoveRate;
-        int charHP;
-        int charMP;
-
         public int CharSTR
         {
             get

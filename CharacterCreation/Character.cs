@@ -8,10 +8,26 @@ namespace CharacterCreation
 {
     internal class Character
     {
+        public int charSTR;
+        public int charDEX;
+        public int charPOW;
+        public int charCON;
+        public int charAPP;
+        public int charEDU;
+        public int charSIZ;
+        public int charINT;
+        public int charLuck;
+        public int charMoveRate;
+        public int charHP;
+        public int charMP;
+
         public static readonly Random DiceRandom = new Random();
         public bool RandomizeChar = false;
-       
-        
+
+        Occupation CurrentOccupation = new Occupation();
+
+        Characteristic Investigator = new Characteristic(true);
+
         /*bool young = false;
         bool adult = false;
         bool old = false;*/
@@ -59,14 +75,30 @@ namespace CharacterCreation
             {
                 if (string.IsNullOrWhiteSpace(value) && RandomizeChar == true)
                 {
-                    charOccupation = SelectOccupation();
+                    charOccupation = CurrentOccupation.SelectOccupation();
+                    CurrentOccupation.OccupationName = charOccupation;
                 }
                 else
                 {
-                    charOccupation = value;
+                    charOccupation = CurrentOccupation.OccupationName;
                 }
             }
         }
+
+        public int occupationSkillPoints;
+        public int OccupationPoints
+        {
+            get
+            {
+                return occupationSkillPoints;
+            }
+            set
+            {
+
+                occupationSkillPoints = CurrentOccupation.OccupationSkillPoints;
+            }
+        }
+
         string charBirthplace;
         public string CharBirthplace
         {
@@ -141,10 +173,12 @@ namespace CharacterCreation
 
         public Character(string charName, string charPlayer, string charOccupation, string charBirthplace, string charResidence, int charAge)
         {
+
             RandomizeChar = false;
             CharName = charName;
             CharPlayer = charPlayer;
-            CharOccupation = charOccupation;
+            CurrentOccupation.OccupationName = charOccupation;
+            CharOccupation = CurrentOccupation.OccupationName;
             CharBirthplace = charBirthplace;
             CharResidence = charResidence;
             CharAge = charAge;
@@ -161,6 +195,18 @@ namespace CharacterCreation
             CharAge = 0;
             CharName = empty;
             CharPlayer = empty;
+            charSTR = Investigator.charSTR;
+            charDEX = Investigator.CharDEX;
+            charPOW = Investigator.CharPOW;
+            charCON = Investigator.CharCON;
+            charAPP = Investigator.CharAPP;
+            charEDU = Investigator.CharEDU;
+            charSIZ = Investigator.CharSIZ;
+            charINT = Investigator.CharINT;
+            charLuck = Investigator.CharLuck;
+            charMoveRate = Investigator.charMoveRate;
+            charHP = Investigator.CharHP;
+            charMP = Investigator.CharMP;
 
         }
 
@@ -735,124 +781,7 @@ namespace CharacterCreation
             }
             return name;
         }
-        string SelectOccupation()
-        {
-            string charOccupation = "";
-            string[] Occupations = new string[]
-                { "",
-                    "Accountant",
-                    "Acrobat",
-                    "Actor",
-                    "Agency Detective",
-                    "Alienist",
-                    "Animl Trainer",
-                    "Atiquarian",
-                    "Antique Dealer",
-                    "Archaeologist",
-                    "Architect",
-                    "Artist",
-                    "Asylum Attendant",
-                    "Assassin",
-                    "Athlete",
-                    "Author",
-                    "Aviator",
-                    "Bank Robber",
-                    "Bartender",
-                    "Big Game Hunter",
-                    "Book Dealer",
-                    "Bootlegger",
-                    "Bounty Hunter",
-                    "Boxer/Wrestler",
-                    "Burglar",
-                    "Butler/Valet/Maid",
-                    "Chauffeur",
-                    "Computer Programmer/Hacker",
-                    "Conman",
-                    "Cowboy/girl",
-                    "Craftsperson",
-                    "Criminal",
-                    "Cult Leader",
-                    "Deprogrammer",
-                    "Designer",
-                    "Dilletante",
-                    "Diver",
-                    "Doctor of Medicine",
-                    "Drifter",
-                    "Driver",
-                    "Editor",
-                    "Elected Official",
-                    "Enginner",
-                    "Entertainer",
-                    "Explorer",
-                    "Farmer",
-                    "Federal Agent",
-                    "Fence",
-                    "Firefighter",
-                    "Foreign Correspondent",
-                    "Forensic Surgeon",
-                    "Forger/Counterfeiter",
-                    "Gambler",
-                    "Gangster",
-                    "Gun Moll",
-                    "Gentleman/Lady",
-                    "Hacker",
-                    "Hobo",
-                    "Hospital Orderly",
-                    "Journalist",
-                    "Judge",
-                    "Laboratory Assistant",
-                    "Laborer",
-                    "Lawyer",
-                    "Librarian",
-                    "Lumberjack",
-                    "Maid",
-                    "Mechanic",
-                    "Military Officer",
-                    "Miner",
-                    "Missionary",
-                    "Mountain Climber",
-                    "Museum Curator",
-                    "Musician",
-                    "Nurse",
-                    "Occutist",
-                    "Outdoorsman/Outdoorswoman",
-                    "Parapsychologist",
-                    "Pharmacist",
-                    "Photographer",
-                    "Photojournalist",
-                    "Pilot",
-                    "Police Detective/Officer",
-                    "Private Investigator",
-                    "Professor",
-                    "Prostitute",
-                    "Psychiatrist",
-                    "Psychologist/Psychoanalyst",
-                    "Reporter",
-                    "Researcher",
-                    "Sailor",
-                    "Salesperson",
-                    "Secretary",
-                    "Shopkeeper",
-                    "Smuggler",
-                    "Soldier/Marine",
-                    "Spy",
-                    "Street Punk",
-                    "Student/Intern",
-                    "Stuntman",
-                    "Taxi Driver",
-                    "Thug",
-                    "Tribe Member",
-                    "Undertaker",
-                    "Union Activist",
-                    "Valet",
-                    "Waitress/Waiter",
-                    "White-collar Worker",
-                    "Zealot",
-                    "Zookeeper"}; // 50 names
-            charOccupation += Occupations[RollingDices(109)];
 
-            return charOccupation;
-        }
         string SelectBirthPlace()
         {
             string charBirhtPlace = "";
@@ -891,8 +820,11 @@ namespace CharacterCreation
         string SelectResidence()
         {
             string charResidense = "";
-            string[] Locations = new string[]
-                { "",
+            if (RollingDices(100)< 50) // 50% chance of moving to another place 
+            {
+                
+                string[] Locations = new string[]
+                    { "",
                     "Austria",
                     "Belgium",
                     "Bulgaria",
@@ -919,7 +851,13 @@ namespace CharacterCreation
                     "Sweden",
                     "United States",
                     "Mexico"}; // 26 countries
-            charResidense += Locations[RollingDices(26)];
+                charResidense += Locations[RollingDices(26)];
+            }
+            else
+            {
+                charResidense = charBirthplace;
+            }
+            
 
             return charResidense;
         }
@@ -1010,6 +948,7 @@ namespace CharacterCreation
             roll = DiceRandom.Next(1, max);
             return roll;
         }
+
 
     }
 }
