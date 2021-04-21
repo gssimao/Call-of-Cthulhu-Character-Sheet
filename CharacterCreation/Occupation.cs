@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCreation
 {
-    class Occupation : Character
+    class Occupation : Characteristic
     {
         public string _occupationName;
         public string OccupationName 
@@ -67,10 +67,6 @@ namespace CharacterCreation
 
         }
 
-        public Occupation ()
-        {
-            
-        }
         public string SelectOccupation()
         {
             string charOccupation = "";

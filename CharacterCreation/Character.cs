@@ -8,29 +8,8 @@ namespace CharacterCreation
 {
     internal class Character
     {
-        public int charSTR;
-        public int charDEX;
-        public int charPOW;
-        public int charCON;
-        public int charAPP;
-        public int charEDU;
-        public int charSIZ;
-        public int charINT;
-        public int charLuck;
-        public int charMoveRate;
-        public int charHP;
-        public int charMP;
-
         public static readonly Random DiceRandom = new Random();
         public bool RandomizeChar = false;
-
-        Occupation CurrentOccupation = new Occupation();
-
-        Characteristic Investigator = new Characteristic(true);
-
-        /*bool young = false;
-        bool adult = false;
-        bool old = false;*/
 
 
         string charName;
@@ -52,6 +31,7 @@ namespace CharacterCreation
                 }
             }
         }
+
         string charPlayer;
         public string CharPlayer
         {
@@ -62,40 +42,6 @@ namespace CharacterCreation
             set
             {
                 charPlayer = value;
-            }
-        }
-        string charOccupation;
-        public string CharOccupation
-        {
-            get
-            {
-                return charOccupation;
-            }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value) && RandomizeChar == true)
-                {
-                    charOccupation = CurrentOccupation.SelectOccupation();
-                    CurrentOccupation.OccupationName = charOccupation;
-                }
-                else
-                {
-                    charOccupation = CurrentOccupation.OccupationName;
-                }
-            }
-        }
-
-        public int occupationSkillPoints;
-        public int OccupationPoints
-        {
-            get
-            {
-                return occupationSkillPoints;
-            }
-            set
-            {
-
-                occupationSkillPoints = CurrentOccupation.OccupationSkillPoints;
             }
         }
 
@@ -137,26 +83,7 @@ namespace CharacterCreation
                 }
             }
         }
-        int charAge;
-        public int CharAge
-        {
-            get
-            {
-                return charAge;
-            }
-            set
-            {
-                if (value == 0 && RandomizeChar == true)
-                {
-                    charAge = RollingDices(61) + 14;
-                }
-                else
-                {
-                    charAge = value;
-                }
 
-            }
-        }
         int charSex;
         public int CharSex
         {
@@ -171,17 +98,14 @@ namespace CharacterCreation
         }
 
 
-        public Character(string charName, string charPlayer, string charOccupation, string charBirthplace, string charResidence, int charAge)
+      /*  public Character(string charName, string charPlayer, string charOccupation, string charBirthplace, string charResidence, int charAge)
         {
 
             RandomizeChar = false;
             CharName = charName;
             CharPlayer = charPlayer;
-            CurrentOccupation.OccupationName = charOccupation;
-            CharOccupation = CurrentOccupation.OccupationName;
             CharBirthplace = charBirthplace;
             CharResidence = charResidence;
-            CharAge = charAge;
         }
 
         public Character() // Create a randomized character
@@ -189,26 +113,12 @@ namespace CharacterCreation
             string empty = "";
             CharSex = RollingDices(3); // 1 = male /// 2 = female;
             RandomizeChar = true;
-            CharOccupation = empty;
             CharBirthplace = empty;
             CharResidence = empty;
-            CharAge = 0;
             CharName = empty;
             CharPlayer = empty;
-            charSTR = Investigator.charSTR;
-            charDEX = Investigator.CharDEX;
-            charPOW = Investigator.CharPOW;
-            charCON = Investigator.CharCON;
-            charAPP = Investigator.CharAPP;
-            charEDU = Investigator.CharEDU;
-            charSIZ = Investigator.CharSIZ;
-            charINT = Investigator.CharINT;
-            charLuck = Investigator.CharLuck;
-            charMoveRate = Investigator.charMoveRate;
-            charHP = Investigator.CharHP;
-            charMP = Investigator.CharMP;
 
-        }
+        }*/
 
         string SelectName()
         {
@@ -731,7 +641,7 @@ namespace CharacterCreation
                    "Romero"};
                 name += " " + SpainSurnames[RollingDices(10)];
             }
-            if (CharBirthplace == "Sweden")///////////////////////////////////////////////////////// stopped here
+            if (CharBirthplace == "Sweden")
             {
                 string[] SwedenSurnames = new string[]
                   {  "",
@@ -861,87 +771,7 @@ namespace CharacterCreation
 
             return charResidense;
         }
-        public int CalculateMagicPoint(int POW)
-        {
-            int calc = (int)Math.Floor((float)POW / 5);
-            return calc;
-        }
-        public string CalculateDamageBonus(int STR, int SIZ)
-        {
-            int combine = STR + SIZ;
-           if(combine <= 64)
-            {
-                return "-2";
-            }
-           else if(combine >= 65 && combine <= 84 )
-            {
-                return "-1";
-            }
-            else if (combine >= 85 && combine <= 124)
-            {
-                return "None";
-            }
-            else if (combine >= 125 && combine <= 164)
-            {
-                return "+1D4";
-            }
-            else if (combine >= 165)
-            {
-                return "+1D6";
-            }
-            return "";
-        }
-        public string CalculateBuild(int STR, int SIZ)
-        {
-            int combine = STR + SIZ;
-            if (combine <= 64)
-            {
-                return "-2";
-            }
-            else if (combine >= 65 && combine <= 84)
-            {
-                return "-1";
-            }
-            else if (combine >= 85 && combine <= 124)
-            {
-                return "None";
-            }
-            else if (combine >= 125 && combine <= 164)
-            {
-                return "+1";
-            }
-            else if (combine >= 165)
-            {
-                return "+2";
-            }
-            return "";
-        }
-        public int CalculateHP(int SIZ, int CON)
-        {
-            int calc = (int)Math.Floor(((float)SIZ + CON)/10);
-            return calc;
-        }
-        public int CalculateMoveRate(int STR, int DEX, int SIZ)
-        {
-            int mov = 0;
-            if (CharAge > 40)
-            {
-                mov = -1;
-            }
-            if (STR < SIZ && STR < SIZ)
-            {
-                mov += 7;
-            }
-            else if(STR >= SIZ || DEX >= SIZ)
-            {
-                mov += 8;
-            }
-            else if (STR > SIZ && DEX > SIZ)
-            {
-                mov += 9;
-            }
-            return mov;
-        }
+
         public int RollingDices(int max)
         {
             int roll;

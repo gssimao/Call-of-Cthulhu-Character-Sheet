@@ -8,6 +8,38 @@ namespace CharacterCreation
 {
     class Characteristic : Character
     {
+        public int charSTR;
+        public int charDEX;
+        public int charPOW;
+        public int charCON;
+        public int charAPP;
+        public int charEDU;
+        public int charSIZ;
+        public int charINT;
+        public int charLuck;
+        public int charMoveRate;
+        public int charHP;
+        public int charMP;
+        public int charAge;
+        public int CharAge
+        {
+            get
+            {
+                return charAge;
+            }
+            set
+            {
+                if (value == 0 && RandomizeChar == true)
+                {
+                    charAge = RollingDices(61) + 14;
+                }
+                else
+                {
+                    charAge = value;
+                }
+
+            }
+        }
         public int CharSTR
         {
             get
@@ -221,7 +253,7 @@ namespace CharacterCreation
             }
         }
 
-        public Characteristic(int STR, int DEX, int POW, int CON, int APP, int EDU, int SIZ, int INT, int LUCK, int MoveRate)
+       /* public Characteristic(int STR, int DEX, int POW, int CON, int APP, int EDU, int SIZ, int INT, int LUCK, int MoveRate)
         {
             CharSTR = STR;
             CharDEX = DEX;
@@ -249,7 +281,7 @@ namespace CharacterCreation
             CharMoveRate = randomSet;
             CharMP = randomSet;
             CharHP = randomSet;
-        }
+        }*/
 
         int SetCharacteristic(bool GiveLastDie)
         {
@@ -270,5 +302,86 @@ namespace CharacterCreation
             return RollResult;
         }
 
+        public int CalculateMagicPoint(int POW)
+        {
+            int calc = (int)Math.Floor((float)POW / 5);
+            return calc;
+        }
+        public string CalculateDamageBonus(int STR, int SIZ)
+        {
+            int combine = STR + SIZ;
+            if (combine <= 64)
+            {
+                return "-2";
+            }
+            else if (combine >= 65 && combine <= 84)
+            {
+                return "-1";
+            }
+            else if (combine >= 85 && combine <= 124)
+            {
+                return "None";
+            }
+            else if (combine >= 125 && combine <= 164)
+            {
+                return "+1D4";
+            }
+            else if (combine >= 165)
+            {
+                return "+1D6";
+            }
+            return "";
+        }
+        public string CalculateBuild(int STR, int SIZ)
+        {
+            int combine = STR + SIZ;
+            if (combine <= 64)
+            {
+                return "-2";
+            }
+            else if (combine >= 65 && combine <= 84)
+            {
+                return "-1";
+            }
+            else if (combine >= 85 && combine <= 124)
+            {
+                return "None";
+            }
+            else if (combine >= 125 && combine <= 164)
+            {
+                return "+1";
+            }
+            else if (combine >= 165)
+            {
+                return "+2";
+            }
+            return "";
+        }
+        public int CalculateHP(int SIZ, int CON)
+        {
+            int calc = (int)Math.Floor(((float)SIZ + CON) / 10);
+            return calc;
+        }
+        public int CalculateMoveRate(int STR, int DEX, int SIZ)
+        {
+            int mov = 0;
+            if (CharAge > 40)
+            {
+                mov = -1;
+            }
+            if (STR < SIZ && STR < SIZ)
+            {
+                mov += 7;
+            }
+            else if (STR >= SIZ || DEX >= SIZ)
+            {
+                mov += 8;
+            }
+            else if (STR > SIZ && DEX > SIZ)
+            {
+                mov += 9;
+            }
+            return mov;
+        }
     }
 }

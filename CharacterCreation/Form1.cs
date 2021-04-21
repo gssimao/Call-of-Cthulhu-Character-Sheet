@@ -207,7 +207,7 @@ namespace CharacterCreation
 
         private void saveChar_Click(object sender, EventArgs e) // save character Button
         {
-            Character Investigator = new Character(CharName.ToString(), CharPlayer.ToString(), CharOccupation.ToString(), CharBirthplace.ToString(), CharResidence.ToString(), int.Parse(CharAge.Text));
+            //Character Investigator = new Character(CharName.ToString(), CharPlayer.ToString(), CharOccupation.ToString(), CharBirthplace.ToString(), CharResidence.ToString(), int.Parse(CharAge.Text));
   /*          Characteristic BaseCharacteristc = new Characteristic(CheckIfEmpty(CharSTR.ToString()), CheckIfEmpty(CharDEX.ToString()), CheckIfEmpty(CharPOW.ToString()),
                                                                   CheckIfEmpty(CharCON.ToString()), CheckIfEmpty(CharAPP.ToString()), CheckIfEmpty(CharEDU.ToString()),
                                                                   CheckIfEmpty(CharSIZ.ToString()), CheckIfEmpty(CharINT.ToString()), CheckIfEmpty(CharLuck.ToString()),
@@ -217,7 +217,7 @@ namespace CharacterCreation
 
         private void Randomize_Click(object sender, EventArgs e)
         {
-            Character Investigator = new Character();
+            /*Character Investigator = new Character();
             CharName.Text = Investigator.CharName;
             CharOccupation.Text = Investigator.CharOccupation;
             CharBirthplace.Text = Investigator.CharBirthplace;
@@ -238,10 +238,10 @@ namespace CharacterCreation
             CharCurrentHP.Text = Investigator.charHP.ToString();
             CharSanity.Text = Investigator.charPOW.ToString();
             CharMaxSanity.Text = Investigator.charPOW.ToString();
-            CharMP.Text = Investigator.charMP.ToString();
+            CharMP.Text = Investigator.charMP.ToString();*/
 
 
-            if (Investigator.CharSex == 1)
+           /* if (Investigator.CharSex == 1) // this is for the player's Sex choice. 1 is male 2 is female // to use later
             {
                 Male.Checked = true;
                 Female.Checked = false;
@@ -250,7 +250,7 @@ namespace CharacterCreation
             {
                 Female.Checked = true;
                 Male.Checked = false;
-            }
+            }*/
         }
         public int CheckIfEmpty(string num)
         {
