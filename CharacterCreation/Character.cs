@@ -11,7 +11,6 @@ namespace CharacterCreation
         public static readonly Random DiceRandom = new Random();
         public bool RandomizeChar = false;
 
-
         string charName;
         public string CharName
         {

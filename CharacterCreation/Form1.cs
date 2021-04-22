@@ -12,6 +12,7 @@ namespace CharacterCreation
 {
     public partial class character : Form
     {
+        public static readonly Random DiceRandom = new Random();
         public character()
         {
             InitializeComponent();
@@ -217,7 +218,11 @@ namespace CharacterCreation
 
         private void Randomize_Click(object sender, EventArgs e)
         {
-            /*Character Investigator = new Character();
+            string newOccupation = SelectOccupation();
+            CreateOccupation(newOccupation);
+            //call on investigator propertites
+
+            /*
             CharName.Text = Investigator.CharName;
             CharOccupation.Text = Investigator.CharOccupation;
             CharBirthplace.Text = Investigator.CharBirthplace;
@@ -263,7 +268,654 @@ namespace CharacterCreation
                 return 0;
             }
         }
+        public string SelectOccupation()
+        {
+            string charOccupation = "";
+            string[] Occupations = new string[]
+                { "",
+                    "Accountant",
+                    "Acrobat",
+                    "Actor",
+                    "Film Star",
+                    "Agency Detective",
+                    "Alienist",
+                    "Animal Trainer",
+                    "Atiquarian",
+                    "Antique Dealer",
+                    "Archaeologist",
+                    "Architect",
+                    "Artist",
+                    "Asylum Attendant",
+                    "Assassin",
+                    "Athlete",
+                    "Author",
+                    "Aviator",
+                    "Bank Robber",
+                    "Bartender",
+                    "Big Game Hunter",
+                    "Book Dealer",
+                    "Bootlegger",
+                    "Bounty Hunter",
+                    "Boxer/Wrestler",
+                    "Burglar",
+                    "Butler/Valet/Maid",
+                    "Chauffeur",
+                    "Computer Programmer/Hacker",
+                    "Conman",
+                    "Cowboy/girl",
+                    "Craftsperson",
+                    "Criminal",
+                    "Cult Leader",
+                    "Deprogrammer",
+                    "Designer",
+                    "Dilletante",
+                    "Diver",
+                    "Doctor of Medicine",
+                    "Drifter",
+                    "Driver",
+                    "Editor",
+                    "Elected Official",
+                    "Enginner",
+                    "Entertainer",
+                    "Explorer",
+                    "Farmer",
+                    "Federal Agent",
+                    "Fence",
+                    "Firefighter",
+                    "Foreign Correspondent",
+                    "Forensic Surgeon",
+                    "Forger/Counterfeiter",
+                    "Gambler",
+                    "Gangster",
+                    "Gun Moll",
+                    "Gentleman/Lady",
+                    "Hacker",
+                    "Hobo",
+                    "Hospital Orderly",
+                    "Journalist",
+                    "Judge",
+                    "Laboratory Assistant",
+                    "Laborer",
+                    "Lawyer",
+                    "Librarian",
+                    "Lumberjack",
+                    "Maid",
+                    "Mechanic",
+                    "Military Officer",
+                    "Miner",
+                    "Missionary",
+                    "Mountain Climber",
+                    "Museum Curator",
+                    "Musician",
+                    "Nurse",
+                    "Occutist",
+                    "Outdoorsman/Outdoorswoman",
+                    "Parapsychologist",
+                    "Pharmacist",
+                    "Photographer",
+                    "Photojournalist",
+                    "Pilot",
+                    "Police Detective/Officer",
+                    "Private Investigator",
+                    "Professor",
+                    "Prostitute",
+                    "Psychiatrist",
+                    "Psychologist/Psychoanalyst",
+                    "Reporter",
+                    "Researcher",
+                    "Sailor",
+                    "Salesperson",
+                    "Secretary",
+                    "Shopkeeper",
+                    "Smuggler",
+                    "Soldier/Marine",
+                    "Spy",
+                    "Street Punk",
+                    "Student/Intern",
+                    "Stuntman",
+                    "Taxi Driver",
+                    "Thug",
+                    "Tribe Member",
+                    "Undertaker",
+                    "Union Activist",
+                    "Valet",
+                    "Waitress/Waiter",
+                    "White-collar Worker",
+                    "Zealot",
+                    "Zookeeper"}; // 50 names
+            charOccupation += Occupations[RollingDices(110)];
 
+            return charOccupation;
+        }
+        
+        //I'll have to make this a different way, maybe an if statement inside the form button?
+        public void CreateOccupation(string Occupation)
+        {
+            Occupation = Occupation.ToLower();
 
+            switch (Occupation)
+            {
+                case "accountant":
+                   Accountant AccountantPlayer = new Accountant();
+                    break;
+
+                case "acrobat":
+                    Acrobat AcrobatPlayer = new Acrobat();
+                    break;
+
+                case "actor":
+                    break;
+
+                case "agency detective":
+                    break;
+
+                case "alienist":
+                    break;
+
+                case "animal trainer":
+                    break;
+
+                case "atiquarian":
+                    break;
+
+                case "antique dealer":
+                   break;
+
+                case "archaeologist":
+                    break;
+
+                case "architect":
+                     break;
+
+                case "artist":
+                    
+                    break;
+
+                case "asylum attendant":
+                   break;
+
+                case "assassin":
+                    break;
+
+                case "author":
+
+                    break;
+
+                case "aviator":
+
+                    break;
+
+                case "bank robber":
+
+                    break;
+
+                case "bartender":
+
+                    break;
+
+                case "big game hunter":
+
+                    break;
+
+                case "book dealer":
+
+                    break;
+
+                case "bootlegger":
+
+                    break;
+
+                case "bounty hunter":
+
+                    break;
+
+                case "boxer/wrestler":
+
+                    break;
+
+                case "boxer":
+
+                    break;
+
+                case "wrestler":
+
+                    break;
+
+                case "burglar":
+
+                    break;
+
+                case "butler":
+
+                    break;
+
+                case "valet":
+
+                    break;
+
+                case "maid":
+
+                    break;
+
+                case "chauffeur":
+
+                    break;
+
+                case "computer programmer":
+
+                    break;
+
+                case "hacker":
+
+                    break;
+
+                case "computer programmer/hacker":
+
+                    break;
+
+                case "conman":
+
+                    break;
+
+                case "cowboy":
+
+                    break;
+
+                case "cowgirl":
+
+                    break;
+                case "cowboy/girl":
+
+                    break;
+
+                case "craftsperson":
+
+                    break;
+
+                case "criminal":
+
+                    break;
+
+                case "cult leader":
+
+                    break;
+
+                case "deprogrammer":
+
+                    break;
+
+                case "designer":
+
+                    break;
+
+                case "dilletante":
+
+                    break;
+
+                case "diver":
+
+                    break;
+
+                case "doctor of medicine":
+
+                    break;
+
+                case "drifter":
+
+                    break;
+
+                case "driver":
+
+                    break;
+
+                case "editor":
+
+                    break;
+
+                case "elected official":
+
+                    break;
+
+                case "enginner":
+
+                    break;
+
+                case "entertainer":
+
+                    break;
+
+                case "explorer":
+
+                    break;
+
+                case "farmer":
+
+                    break;
+
+                case "federal agent":
+
+                    break;
+
+                case "fence":
+
+                    break;
+
+                case "firefighter":
+
+                    break;
+
+                case "foreign correspondent":
+
+                    break;
+
+                case "forensic surgeon":
+
+                    break;
+
+                case "forger/counterfeiter":
+
+                    break;
+
+                case "counterfeiter":
+
+                    break;
+
+                case "forger":
+
+                    break;
+
+                case "gambler":
+
+                    break;
+
+                case "gangster":
+
+                    break;
+
+                case "gun Moll":
+
+                    break;
+
+                case "gentleman/lady":
+
+                    break;
+
+                case "gentleman":
+
+                    break;
+
+                case "lady":
+
+                    break;
+
+                case "hobo":
+
+                    break;
+
+                case "hospital Orderly":
+
+                    break;
+
+                case "journalist":
+
+                    break;
+
+                case "judge":
+
+                    break;
+
+                case "laboratory assistant":
+
+                    break;
+
+                case "laborer":
+
+                    break;
+
+                case "lawyer":
+
+                    break;
+
+                case "librarian":
+
+                    break;
+
+                case "lumberjack":
+
+                    break;
+
+                case "mechanic":
+
+                    break;
+
+                case "military Officer":
+
+                    break;
+
+                case "miner":
+
+                    break;
+
+                case "missionary":
+
+                    break;
+
+                case "mountain climber":
+
+                    break;
+
+                case "museum curator":
+
+                    break;
+
+                case "musician":
+
+                    break;
+
+                case "nurse":
+
+                    break;
+
+                case "occutist":
+
+                    break;
+
+                case "outdoorsman/outdoorswoman":
+
+                    break;
+
+                case "outdoorsman":
+
+                    break;
+
+                case "outdoorswoman":
+
+                    break;
+
+                case "parapsychologist":
+
+                    break;
+
+                case "pharmacist":
+
+                    break;
+
+                case "photographer":
+
+                    break;
+
+                case "photojournalist":
+
+                    break;
+
+                case "Pilot":
+
+                    break;
+
+                case "police detective/officer":
+
+                    break;
+
+                case "police detective":
+
+                    break;
+
+                case "officer":
+
+                    break;
+
+                case "private investigator":
+
+                    break;
+
+                case "professor":
+
+                    break;
+
+                case "prostitute":
+
+                    break;
+
+                case "psychiatrist":
+
+                    break;
+
+                case "psychologist/psychoanalyst":
+
+                    break;
+
+                case "psychologist":
+
+                    break;
+
+                case "psychoanalyst":
+
+                    break;
+
+                case "reporter":
+
+                    break;
+
+                case "researcher":
+
+                    break;
+
+                case "sailor":
+
+                    break;
+
+                case "salesperson":
+
+                    break;
+
+                case "secretary":
+
+                    break;
+
+                case "shopkeeper":
+
+                    break;
+
+                case "smuggler":
+
+                    break;
+
+                case "soldier/marine":
+
+                    break;
+
+                case "soldier":
+
+                    break;
+
+                case "marine":
+
+                    break;
+
+                case "spy":
+
+                    break;
+
+                case "street punk":
+
+                    break;
+
+                case "student/intern":
+
+                    break;
+
+                case "student":
+
+                    break;
+
+                case "intern":
+
+                    break;
+
+                case "stuntman":
+
+                    break;
+
+                case "taxi driver":
+
+                    break;
+
+                case "thug":
+
+                    break;
+
+                case "tribe member":
+
+                    break;
+
+                case "undertaker":
+
+                    break;
+
+                case "tribe Member":
+
+                    break;
+
+                case "union activist":
+
+                    break;
+
+                case "waitress/waiter":
+
+                    break;
+
+                case "waiter":
+
+                    break;
+
+                case "waitress":
+
+                    break;
+
+                case "white-collar worker":
+
+                    break;
+
+                case "zealot":
+
+                    break;
+
+                case "zookeeper":
+
+                    break;
+
+                default:
+                    Console.WriteLine("Nothing");
+                    break;
+            }
+            
+        } 
+        
+        public int RollingDices(int max)
+        {
+            int roll;
+            roll = DiceRandom.Next(1, max);
+            return roll;
+        }
     }
 }
