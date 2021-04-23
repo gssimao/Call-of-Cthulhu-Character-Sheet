@@ -219,7 +219,18 @@ namespace CharacterCreation
         private void Randomize_Click(object sender, EventArgs e)
         {
             string newOccupation = SelectOccupation();
-            CreateOccupation(newOccupation);
+            object InvestigatorPlayer;
+
+            InvestigatorPlayer = Activator.CreateInstance(CreateOccupation("Accountant"));
+
+            List<Characteristic> OccupationList = new List<Characteristic>();
+            //OccupationList.Add(new Accountant(true) {CharName = "Steve"});
+            OccupationList.Add(new Accountant(true));
+            OccupationList.Add(new Acrobat(true));
+            int index = DiceRandom.Next(OccupationList.Count);
+
+            CharName.Text = OccupationList[index].CharName.ToString();
+
             //call on investigator propertites
 
             /*
@@ -246,16 +257,16 @@ namespace CharacterCreation
             CharMP.Text = Investigator.charMP.ToString();*/
 
 
-           /* if (Investigator.CharSex == 1) // this is for the player's Sex choice. 1 is male 2 is female // to use later
-            {
-                Male.Checked = true;
-                Female.Checked = false;
-            }
-            else if (Investigator.CharSex == 2)
-            {
-                Female.Checked = true;
-                Male.Checked = false;
-            }*/
+            /* if (Investigator.CharSex == 1) // this is for the player's Sex choice. 1 is male 2 is female // to use later
+             {
+                 Male.Checked = true;
+                 Female.Checked = false;
+             }
+             else if (Investigator.CharSex == 2)
+             {
+                 Female.Checked = true;
+                 Male.Checked = false;
+             }*/
         }
         public int CheckIfEmpty(string num)
         {
@@ -389,21 +400,20 @@ namespace CharacterCreation
         }
         
         //I'll have to make this a different way, maybe an if statement inside the form button?
-        public void CreateOccupation(string Occupation)
+        public Type CreateOccupation(string Occupation)
         {
             Occupation = Occupation.ToLower();
-
             switch (Occupation)
             {
                 case "accountant":
-                   Accountant AccountantPlayer = new Accountant();
-                    break;
+                    Accountant AccountantPlayer = new Accountant();
+                    return AccountantPlayer.GetType();
 
                 case "acrobat":
-                    Acrobat AcrobatPlayer = new Acrobat();
-                    break;
+                    Acrobat AcorbatPlayer = new Acrobat();
+                    return AcorbatPlayer.GetType();
 
-                case "actor":
+                /*case "actor":
                     break;
 
                 case "agency detective":
@@ -903,9 +913,11 @@ namespace CharacterCreation
                 case "zookeeper":
 
                     break;
-
+                */
                 default:
-                    Console.WriteLine("Nothing");
+                    Accountant Investigator = new Accountant();
+                    return Investigator.GetType();
+                    //Console.WriteLine("Nothing");
                     break;
             }
             

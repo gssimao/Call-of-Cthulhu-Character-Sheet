@@ -8,6 +8,7 @@ namespace CharacterCreation
 {
     class Accountant : Characteristic
     {
+        public readonly string _occupationName = "Accountant";
         public int _occupationSkillPoints;
         public int OccupationSkillPoints
         {
@@ -29,9 +30,33 @@ namespace CharacterCreation
         public int SelectMoreSkills = 2;
         public Accountant()
         {
-            OccupationSkillPoints = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
+            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
-        
-        
+        public Accountant(bool random) // this is a random accountant
+        {
+            //base character randomization
+            CharName = SelectName();
+            CharBirthplace = SelectBirthPlace();
+            CharResidence = SelectResidence();
+
+            //characteristic randomization
+            int randomSet = 999;
+            CharSTR = randomSet;
+            CharDEX = randomSet;
+            CharPOW = randomSet;
+            CharCON = randomSet;
+            CharAPP = randomSet;
+            CharEDU = randomSet;
+            CharSIZ = randomSet;
+            CharINT = randomSet;
+            CharLuck = randomSet;
+            CharMoveRate = randomSet;
+            CharMP = randomSet;
+            CharHP = randomSet;
+
+            //occupation point skill calculation
+            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
+        }
+
     }
 }

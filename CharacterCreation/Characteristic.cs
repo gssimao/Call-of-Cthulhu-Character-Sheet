@@ -299,7 +299,7 @@ namespace CharacterCreation
              CharHP = randomSet;
          }*/
 
-        int SetCharacteristic(bool GiveLastDie)
+        public int SetCharacteristic(bool GiveLastDie)
         {
             int RollResult = 0;
             int Loop = 0;
@@ -410,7 +410,8 @@ namespace CharacterCreation
         }
         public int calculateSkillPointsAvailable(string OccupationName, int STR, int DEX, int POW, int CON, int APP, int EDU, int SIZ, int INT)
         {
-            OccupationName = OccupationName.ToLower();
+            string name = OccupationName;
+            OccupationName = name.ToLower();
             switch (OccupationName)
             {
                 case "accountant":
@@ -459,7 +460,7 @@ namespace CharacterCreation
                     return EDU * 4;
 
                 case "aviator":
-                    break; /// empty
+                    return EDU * 4;
 
                 case "bank robber":
                     return (EDU * 2) + (HighNum(DEX, STR) * 2);
@@ -469,7 +470,6 @@ namespace CharacterCreation
 
                 case "big game hunter":
                     return (EDU * 2) + (HighNum(DEX, STR) * 2);
-
 
                 case "book dealer":
                     return EDU * 4;
@@ -532,7 +532,7 @@ namespace CharacterCreation
                     return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "cult leader":
-                    break; // empty
+                    return EDU * 4;
 
                 case "deprogrammer":
                     return EDU * 4;
@@ -577,8 +577,7 @@ namespace CharacterCreation
                     return EDU * 4;
 
                 case "fence":
-
-                    break; ///empty
+                    return EDU * 4;
 
                 case "firefighter":
                     return (EDU * 2) + (HighNum(DEX, STR) * 2);
@@ -590,13 +589,13 @@ namespace CharacterCreation
                     return EDU * 4;
 
                 case "forger/counterfeiter":
-                    break; ///empty
+                    return EDU * 4;
 
                 case "counterfeiter":
-                    break; ///empty
+                    return EDU * 4;
 
                 case "forger":
-                    break; ///empty
+                    return(EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "gambler":
                     return (EDU * 2) + (HighNum(DEX, APP) * 2);
@@ -605,7 +604,7 @@ namespace CharacterCreation
                     return (EDU * 2) + (APP * 2);
 
                 case "gun Moll":
-                    break; ///empty
+                    return EDU * 4;
 
                 case "gentleman/lady":
                     return (EDU * 2) + (APP * 2);
@@ -650,218 +649,163 @@ namespace CharacterCreation
                     return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "miner":
-
-                    break; /// empty
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "missionary":
                     return (EDU * 2) + (APP * 2);
 
                 case "mountain climber":
                     return (EDU * 2) + (HighNum(DEX, STR) * 2);
-                    break;
 
                 case "museum curator":
-
-                    break;
+                    return EDU * 4;
 
                 case "musician":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "nurse":
-
-                    break;
+                    return EDU * 4;
 
                 case "occutist":
-
-                    break;
+                    return EDU * 4;
 
                 case "outdoorsman/outdoorswoman":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "outdoorsman":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "outdoorswoman":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "parapsychologist":
-
-                    break;
+                    return EDU * 4;
 
                 case "pharmacist":
-
-                    break;
+                    return EDU * 4;
 
                 case "photographer":
-
-                    break;
+                    return EDU * 4;
 
                 case "photojournalist":
-
-                    break;
+                    return EDU * 4;
 
                 case "Pilot":
-
-                    break;
+                    return (EDU * 2) + (DEX * 2);
 
                 case "police detective/officer":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "police detective":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "officer":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "private investigator":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "professor":
-
-                    break;
+                    return EDU * 4;
 
                 case "prostitute":
-
-                    break;
+                    return (EDU * 2) + (APP * 2);
 
                 case "psychiatrist":
-
-                    break;
+                    return EDU * 4;
 
                 case "psychologist/psychoanalyst":
-
-                    break;
+                    return EDU * 4;
 
                 case "psychologist":
-
-                    break;
+                    return EDU * 4;
 
                 case "psychoanalyst":
-
-                    break;
+                    return EDU * 4;
 
                 case "reporter":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "researcher":
-
-                    break;
+                    return EDU * 4;
 
                 case "sailor":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "salesperson":
-
-                    break;
+                    return (EDU * 2) + (APP * 2);
 
                 case "secretary":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "shopkeeper":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "smuggler":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "soldier/marine":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "soldier":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "marine":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "spy":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "street punk":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "student/intern":
-
-                    break;
+                    return EDU * 4;
 
                 case "student":
-
-                    break;
+                    return EDU * 4;
 
                 case "intern":
-
-                    break;
+                    return EDU * 4;
 
                 case "stuntman":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "taxi driver":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "thug":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, STR) * 2);
 
                 case "tribe member":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "undertaker":
-
-                    break;
-
-                case "tribe Member":
-
-                    break;
+                    return EDU * 4;
 
                 case "union activist":
-
-                    break;
+                    return EDU * 4;
 
                 case "waitress/waiter":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "waiter":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "waitress":
-
-                    break;
+                    return (EDU * 2) + (HighNum(DEX, APP) * 2);
 
                 case "white-collar worker":
-
-                    break;
+                    return EDU * 4;
 
                 case "zealot":
-
-                    break;
+                    return (EDU * 2) + (HighNum(POW, APP) * 2);
 
                 case "zookeeper":
-
-                    break;
+                    return EDU * 4;
 
                 default:
-                    Console.WriteLine("Nothing");
+                    Console.WriteLine("The input does not match none of the occupations");
                     break;
             }
             

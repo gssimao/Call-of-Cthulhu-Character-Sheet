@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCreation
 {
-    internal class Character
+    public class Character
     {
         public static readonly Random DiceRandom = new Random();
         public bool RandomizeChar = false;
@@ -119,7 +119,7 @@ namespace CharacterCreation
 
         }*/
 
-        string SelectName()
+        public string SelectName()
         {
             string name = "";
             if (CharSex == 1)
@@ -690,8 +690,7 @@ namespace CharacterCreation
             }
             return name;
         }
-
-        string SelectBirthPlace()
+        public string SelectBirthPlace()
         {
             string charBirhtPlace = "";
             string[] Locations = new string[]
@@ -726,7 +725,7 @@ namespace CharacterCreation
 
             return charBirhtPlace;
         }
-        string SelectResidence()
+        public string SelectResidence()
         {
             string charResidense = "";
             if (RollingDices(100)< 50) // 50% chance of moving to another place 

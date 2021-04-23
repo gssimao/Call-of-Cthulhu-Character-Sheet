@@ -8,6 +8,8 @@ namespace CharacterCreation
 {
     class Acrobat : Characteristic
     {
+        public readonly string _occupationName = "Acrobat";
+
         public int _occupationSkillPoints;
         public int OccupationSkillPoints
         {
@@ -31,7 +33,31 @@ namespace CharacterCreation
         {
             OccupationSkillPoints = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
-        
-        
+
+        public Acrobat(bool random) // this is a random accountant
+        {
+            //base character randomization
+            CharName = SelectName();
+            CharBirthplace = SelectBirthPlace();
+            CharResidence = SelectResidence();
+
+            //characteristic randomization
+            int randomSet = 999;
+            CharSTR = randomSet;
+            CharDEX = randomSet;
+            CharPOW = randomSet;
+            CharCON = randomSet;
+            CharAPP = randomSet;
+            CharEDU = randomSet;
+            CharSIZ = randomSet;
+            CharINT = randomSet;
+            CharLuck = randomSet;
+            CharMoveRate = randomSet;
+            CharMP = randomSet;
+            CharHP = randomSet;
+
+            //occupation point skill calculation
+            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
+        }
     }
 }
