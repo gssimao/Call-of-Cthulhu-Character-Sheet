@@ -26,7 +26,7 @@ namespace CharacterCreation
 
         public readonly string _creditRating = "9 - 40";
         public readonly string _suggestedContacts = "Theatre industry, newspaper arts critics, actor’s guild or union.";
-        public string[] OccupationSkills = { "art/craft", "disguise", "fighting", "history", "charm", "persuade", "psychology"};
+        public string OccupationSkills = "art/craft, disguise, fighting, history, charm, persuade, psychology";
         public int SelectMoreSkills = 1;
         public Actor()
         {
@@ -36,6 +36,7 @@ namespace CharacterCreation
         public Actor(bool random) // this is a random accountant
         {
             _occupationName = _occupationTitle;
+            _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
             CharSex = RollingDices(3);// 1 = male /// 2 = female;
             CharBirthplace = SelectBirthPlace();

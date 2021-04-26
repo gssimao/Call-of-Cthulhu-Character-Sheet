@@ -268,6 +268,35 @@ namespace CharacterCreation
 
         }
 
+        public string _suggestedSkills;
+        public string SuggestedSkills
+        {
+            get
+            {
+                return _suggestedSkills;
+            }
+
+            set
+            {
+                _suggestedSkills = value;
+            }
+
+        }
+        public string _skillpointsAvailable;
+        public string SkillpointsAvailable
+        {
+            get
+            {
+                return _skillpointsAvailable;
+            }
+
+            set
+            {
+                _skillpointsAvailable = value;
+            }
+
+        }
+
 
 
         /* public Characteristic(int STR, int DEX, int POW, int CON, int APP, int EDU, int SIZ, int INT, int LUCK, int MoveRate)

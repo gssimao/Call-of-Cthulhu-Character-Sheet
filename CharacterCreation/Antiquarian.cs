@@ -26,7 +26,7 @@ namespace CharacterCreation
 
         public readonly string _creditRating = "10 - 40";
         public string _suggestedContacts = "Zoos, cicus, folk, patrons, actors";
-        public string[] OccupationSkills = { "jump", "listen", "natural world", "psychology", "science", "stealth", "track"};
+        public string OccupationSkills =  "jump, listen, natural world, psychology, science, stealth, track,";
         public int SelectMoreSkills = 1;
         public Antiquarian()
         {
@@ -35,6 +35,7 @@ namespace CharacterCreation
         public Antiquarian(bool random) // this is a random accountant
         {
             _occupationName = _occupationTitle;
+            _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
             CharSex = RollingDices(3);// 1 = male /// 2 = female;
             CharBirthplace = SelectBirthPlace();

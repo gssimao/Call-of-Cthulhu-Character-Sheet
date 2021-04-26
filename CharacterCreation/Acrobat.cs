@@ -26,7 +26,7 @@ namespace CharacterCreation
 
         public readonly string _creditRating = "5 - 20";
         public readonly string _suggestedContacts = "Amateur athletic circles, sports writers, circuses, carnivals.";
-        public string[] OccupationSkills = { "climb", "dodge", "jump", "throw", "spot hidden", "swim"};
+        public string OccupationSkills ="climb, dodge, jump, throw, spot hidden, swim";
         public int SelectMoreSkills = 2;
         public Acrobat()
         {
@@ -36,6 +36,7 @@ namespace CharacterCreation
         public Acrobat(bool random) // this is a random accountant
         {
             _occupationName = _occupationTitle;
+            _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
             CharSex = RollingDices(3);// 1 = male /// 2 = female;
             CharBirthplace = SelectBirthPlace();

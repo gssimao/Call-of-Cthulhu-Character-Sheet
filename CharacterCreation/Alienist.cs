@@ -26,7 +26,7 @@ namespace CharacterCreation
 
         public readonly string _creditRating = "10 - 60";
         public readonly string _suggestedContacts = "Others in the field of mental illness, medical doctors, and occasionally detectives in law enforcement.";
-        public string[] OccupationSkills = { "law", "listen", "medicine", "other language", "psychoanalysis", "psychology", "biology", "chemistry"};
+        public string OccupationSkills = "law, listen, medicine, other language, psychoanalysis, psychology, biology, chemistry";
         public int SelectMoreSkills = 0;
         public Alienist()
         {
@@ -34,7 +34,8 @@ namespace CharacterCreation
         }
         public Alienist(bool random) // this is a random accountant
         {
-            _occupationName = _occupationTitle; 
+            _occupationName = _occupationTitle;
+            _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
             CharSex = RollingDices(3);// 1 = male /// 2 = female;
             CharBirthplace = SelectBirthPlace();

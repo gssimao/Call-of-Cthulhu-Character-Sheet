@@ -117,6 +117,10 @@ namespace CharacterCreation
         {
 
         }
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
         //Skills section
         private void LawLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -245,7 +249,7 @@ namespace CharacterCreation
             //call on investigator propertites
 
             CharOccupation.Text = newOccupation;
-            Notes.Text = "Contacts\r" + OccupationList[index].Contacts;
+            Notes.Text = "Suggested Skills\r" + OccupationList[index].SuggestedSkills + "\r" + "Contacts\r" + OccupationList[index].Contacts;
             CharBirthplace.Text = OccupationList[index].CharBirthplace;
             CharResidence.Text = OccupationList[index].CharResidence;
             CharAge.Text = OccupationList[index].CharAge.ToString();
