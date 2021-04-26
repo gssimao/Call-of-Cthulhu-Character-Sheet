@@ -67,7 +67,7 @@ namespace CharacterCreation
             this.label15 = new System.Windows.Forms.Label();
             this.CharSIZ = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Notes = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.CharFellowInv2 = new System.Windows.Forms.TextBox();
             this.CharFellowInvName2 = new System.Windows.Forms.TextBox();
@@ -542,16 +542,17 @@ namespace CharacterCreation
             this.label16.TabIndex = 32;
             this.label16.Text = "SIZ";
             // 
-            // richTextBox1
+            // Notes
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(244, 855);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(579, 194);
-            this.richTextBox1.TabIndex = 38;
-            this.richTextBox1.Text = "Notes";
+            this.Notes.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.Notes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Notes.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notes.Location = new System.Drawing.Point(244, 855);
+            this.Notes.Name = "Notes";
+            this.Notes.Size = new System.Drawing.Size(579, 194);
+            this.Notes.TabIndex = 38;
+            this.Notes.Text = "Notes";
+            this.Notes.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label17
             // 
@@ -1716,7 +1717,7 @@ namespace CharacterCreation
             this.Controls.Add(this.CharFellowInvName2);
             this.Controls.Add(this.CharFellowInv2);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Notes);
             this.Controls.Add(this.CharMoveRate);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.CharINT);
@@ -1802,7 +1803,7 @@ namespace CharacterCreation
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox CharSIZ;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox Notes;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox CharFellowInv2;
         private System.Windows.Forms.TextBox CharFellowInvName2;

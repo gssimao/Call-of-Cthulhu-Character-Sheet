@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CharacterCreation
 {
-    class Acrobat : Characteristic
+    class AnimalTrainer : Characteristic
     {
-        public readonly string _occupationTitle = "Acrobat";
+        public readonly string _occupationTitle = "AnimalTrainer";
         public int _occupationSkillPoints;
         public int OccupationSkillPoints
         {
@@ -24,16 +24,15 @@ namespace CharacterCreation
 
         }
 
-        public readonly string _creditRating = "5 - 20";
-        public readonly string _suggestedContacts = "Amateur athletic circles, sports writers, circuses, carnivals.";
-        public string[] OccupationSkills = { "climb", "dodge", "jump", "throw", "spot hidden", "swim"};
-        public int SelectMoreSkills = 2;
-        public Acrobat()
+        public readonly string _creditRating = "10 - 40";
+        public readonly string _suggestedContacts = "Zoos, cicus, folk, patrons, actors";
+        public string[] OccupationSkills = { "jump", "listen", "natural world", "psychology", "science", "stealth", "track"};
+        public int SelectMoreSkills = 1;
+        public AnimalTrainer()
         {
             OccupationSkillPoints = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
-
-        public Acrobat(bool random) // this is a random accountant
+        public AnimalTrainer(bool random) // this is a random accountant
         {
             _occupationName = _occupationTitle;
             Contacts = _suggestedContacts;
@@ -62,5 +61,6 @@ namespace CharacterCreation
             //occupation point skill calculation
             OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
         }
+
     }
 }

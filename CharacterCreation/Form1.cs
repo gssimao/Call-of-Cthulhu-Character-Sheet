@@ -178,6 +178,10 @@ namespace CharacterCreation
         {
 
         }
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         ////// input and ther stuff here
         private void CallDiceRoller_Click(object sender, EventArgs e) // Roll Dice
@@ -218,55 +222,60 @@ namespace CharacterCreation
 
         private void Randomize_Click(object sender, EventArgs e)
         {
+            //object InvestigatorPlayer;
+            // InvestigatorPlayer = Activator.CreateInstance(CreateOccupation("Accountant"));
             string newOccupation = SelectOccupation();
-            object InvestigatorPlayer;
 
-            InvestigatorPlayer = Activator.CreateInstance(CreateOccupation("Accountant"));
-
-            List<Characteristic> OccupationList = new List<Characteristic>();
             //OccupationList.Add(new Accountant(true) {CharName = "Steve"});
+            List<Characteristic> OccupationList = new List<Characteristic>();
             OccupationList.Add(new Accountant(true));
             OccupationList.Add(new Acrobat(true));
-            int index = DiceRandom.Next(OccupationList.Count);
+            OccupationList.Add(new Actor(true));
+            OccupationList.Add(new AgencyDetective(true));
+            OccupationList.Add(new Alienist(true));
+            //OccupationList.Add(new Acrobat(true));
+            int index = DiceRandom.Next(OccupationList.Count); // chose a random from the list
 
-            CharName.Text = OccupationList[index].CharName.ToString();
 
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            ////////// I could make a list of all the skills and check for every skill in the occultist skill array. From there I need a function to show current points and mark the ones
+            /// I have selected from the occupation list.
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //call on investigator propertites
 
-            /*
-            CharName.Text = Investigator.CharName;
-            CharOccupation.Text = Investigator.CharOccupation;
-            CharBirthplace.Text = Investigator.CharBirthplace;
-            CharResidence.Text = Investigator.CharResidence;
-            CharAge.Text = Investigator.CharAge.ToString();
+            CharOccupation.Text = newOccupation;
+            Notes.Text = "Contacts\r" + OccupationList[index].Contacts;
+            CharBirthplace.Text = OccupationList[index].CharBirthplace;
+            CharResidence.Text = OccupationList[index].CharResidence;
+            CharAge.Text = OccupationList[index].CharAge.ToString();
 
-            CharSTR.Text = Investigator.charSTR.ToString();
-            CharDEX.Text = Investigator.charDEX.ToString();
-            CharPOW.Text = Investigator.charPOW.ToString();
-            CharCON.Text = Investigator.charCON.ToString();
-            CharAPP.Text = Investigator.charAPP.ToString();
-            CharEDU.Text = Investigator.charEDU.ToString();
-            CharSIZ.Text = Investigator.charSIZ.ToString();
-            CharINT.Text = Investigator.charINT.ToString();
-            CharLuck.Text = Investigator.charLuck.ToString();
-            CharMoveRate.Text = Investigator.charMoveRate.ToString();
-            CharMaxHP.Text = Investigator.charHP.ToString();
-            CharCurrentHP.Text = Investigator.charHP.ToString();
-            CharSanity.Text = Investigator.charPOW.ToString();
-            CharMaxSanity.Text = Investigator.charPOW.ToString();
-            CharMP.Text = Investigator.charMP.ToString();*/
-
-
-            /* if (Investigator.CharSex == 1) // this is for the player's Sex choice. 1 is male 2 is female // to use later
-             {
-                 Male.Checked = true;
-                 Female.Checked = false;
-             }
-             else if (Investigator.CharSex == 2)
-             {
-                 Female.Checked = true;
-                 Male.Checked = false;
-             }*/
+            CharSTR.Text = OccupationList[index].charSTR.ToString();
+            CharDEX.Text = OccupationList[index].charDEX.ToString();
+            CharPOW.Text = OccupationList[index].charPOW.ToString();
+            CharCON.Text = OccupationList[index].charCON.ToString();
+            CharAPP.Text = OccupationList[index].charAPP.ToString();
+            CharEDU.Text = OccupationList[index].charEDU.ToString();
+            CharSIZ.Text = OccupationList[index].charSIZ.ToString();
+            CharINT.Text = OccupationList[index].charINT.ToString();
+            CharLuck.Text = OccupationList[index].charLuck.ToString();
+            CharMoveRate.Text = OccupationList[index].charMoveRate.ToString();
+            CharMaxHP.Text = OccupationList[index].charHP.ToString();
+            CharCurrentHP.Text = OccupationList[index].charHP.ToString();
+            CharSanity.Text = OccupationList[index].charPOW.ToString();
+            CharMaxSanity.Text = OccupationList[index].charPOW.ToString();
+            CharMP.Text = OccupationList[index].charMP.ToString();
+            CharName.Text = OccupationList[index].CharName.ToString();
+            if (OccupationList[index].CharSex == 1) // this is for the player's Sex choice. 1 is male 2 is female // to use later
+            {
+                Male.Checked = true;
+                Female.Checked = false;
+            }
+            else if (OccupationList[index].CharSex == 2)
+            {
+                Female.Checked = true;
+                Male.Checked = false;
+            }
         }
         public int CheckIfEmpty(string num)
         {
@@ -400,7 +409,7 @@ namespace CharacterCreation
         }
         
         //I'll have to make this a different way, maybe an if statement inside the form button?
-        public Type CreateOccupation(string Occupation)
+        /*public Type CreateOccupation(string Occupation)
         {
             Occupation = Occupation.ToLower();
             switch (Occupation)
@@ -413,8 +422,9 @@ namespace CharacterCreation
                     Acrobat AcorbatPlayer = new Acrobat();
                     return AcorbatPlayer.GetType();
 
-                /*case "actor":
-                    break;
+                case "actor":
+                    Actor ActorPlayer = new Actor();
+                    return ActorPlayer.GetType();
 
                 case "agency detective":
                     break;
@@ -429,20 +439,20 @@ namespace CharacterCreation
                     break;
 
                 case "antique dealer":
-                   break;
+                    break;
 
                 case "archaeologist":
                     break;
 
                 case "architect":
-                     break;
+                    break;
 
                 case "artist":
-                    
+
                     break;
 
                 case "asylum attendant":
-                   break;
+                    break;
 
                 case "assassin":
                     break;
@@ -913,7 +923,7 @@ namespace CharacterCreation
                 case "zookeeper":
 
                     break;
-                */
+
                 default:
                     Accountant Investigator = new Accountant();
                     return Investigator.GetType();
@@ -922,12 +932,14 @@ namespace CharacterCreation
             }
             
         } 
-        
+        */
         public int RollingDices(int max)
         {
             int roll;
             roll = DiceRandom.Next(1, max);
             return roll;
         }
+
+
     }
 }

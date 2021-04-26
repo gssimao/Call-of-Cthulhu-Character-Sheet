@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Antiquarian.cs" />
+    <Compile Include="AnimalTrainer.cs" />
     <Compile Include="Alienist.cs" />
     <Compile Include="AgencyDetective.cs" />
     <Compile Include="FilmStar.cs" />

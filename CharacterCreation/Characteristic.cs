@@ -8,6 +8,7 @@ namespace CharacterCreation
 {
     class Characteristic : Character
     {
+        public string Contacts;
         public int charSTR;
         public int charDEX;
         public int charPOW;
@@ -252,7 +253,7 @@ namespace CharacterCreation
                 charMP = CalculateMagicPoint(CharPOW);
             }
         }
-        public string _occupationName;
+        public  string _occupationName;
         public string OccupationName
         {
             get

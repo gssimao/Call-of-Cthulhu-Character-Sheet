@@ -8,7 +8,7 @@ namespace CharacterCreation
 {
     class Accountant : Characteristic
     {
-        public readonly string _occupationName = "Accountant";
+        public readonly string _occupationTitle = "Accountant";
         public int _occupationSkillPoints;
         public int OccupationSkillPoints
         {
@@ -34,12 +34,16 @@ namespace CharacterCreation
         }
         public Accountant(bool random) // this is a random accountant
         {
+            _occupationName = _occupationTitle;
+            Contacts = _suggestedContacts;
+            CharSex = RollingDices(3);// 1 = male /// 2 = female;
+            CharBirthplace = SelectBirthPlace();
             //base character randomization
             CharName = SelectName();
-            CharBirthplace = SelectBirthPlace();
             CharResidence = SelectResidence();
 
             //characteristic randomization
+            RandomizeChar = random;
             int randomSet = 999;
             CharSTR = randomSet;
             CharDEX = randomSet;
