@@ -9,20 +9,6 @@ namespace CharacterCreation
     class Actor : Characteristic
     {
         public readonly string _occupationTitle = "Actor";
-        public int _occupationSkillPoints;
-        public int OccupationSkillPoints
-        {
-            get
-            {
-                return _occupationSkillPoints;
-            }
-
-            set
-            {
-                _occupationSkillPoints = value;
-            }
-
-        }
 
         public readonly string _creditRating = "9 - 40";
         public readonly string _suggestedContacts = "Theatre industry, newspaper arts critics, actor’s guild or union.";
@@ -30,11 +16,12 @@ namespace CharacterCreation
         public int SelectMoreSkills = 1;
         public Actor()
         {
-            OccupationSkillPoints = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
 
         public Actor(bool random) // this is a random accountant
         {
+            CharAge = 0;
             _occupationName = _occupationTitle;
             _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
@@ -61,7 +48,7 @@ namespace CharacterCreation
             CharHP = randomSet;
 
             //occupation point skill calculation
-            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace CharacterCreation
             }
             set
             {
-                if (value == 0 && RandomizeChar == true)
+                if (value == 0)
                 {
                     charAge = RollingDices(61) + 14;
                 }
@@ -282,8 +282,8 @@ namespace CharacterCreation
             }
 
         }
-        public string _skillpointsAvailable;
-        public string SkillpointsAvailable
+        public int _skillpointsAvailable;
+        public int SkillpointsAvailable
         {
             get
             {
@@ -296,38 +296,6 @@ namespace CharacterCreation
             }
 
         }
-
-
-
-        /* public Characteristic(int STR, int DEX, int POW, int CON, int APP, int EDU, int SIZ, int INT, int LUCK, int MoveRate)
-         {
-             CharSTR = STR;
-             CharDEX = DEX;
-             CharPOW = POW;
-             CharCON = CON;
-             CharAPP = APP;
-             CharEDU = EDU;
-             CharSIZ = SIZ;
-             CharINT = INT;
-             CharLuck = LUCK;
-             CharMoveRate = MoveRate;
-         }
-         public Characteristic(bool randomize)
-         {
-             int randomSet = 999;
-             CharSTR = randomSet;
-             CharDEX = randomSet;
-             CharPOW = randomSet;
-             CharCON = randomSet;
-             CharAPP = randomSet;
-             CharEDU = randomSet;
-             CharSIZ = randomSet;
-             CharINT = randomSet;
-             CharLuck = randomSet;
-             CharMoveRate = randomSet;
-             CharMP = randomSet;
-             CharHP = randomSet;
-         }*/
 
         public int SetCharacteristic(bool GiveLastDie)
         {

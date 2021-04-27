@@ -96,29 +96,6 @@ namespace CharacterCreation
             }
         }
 
-
-      /*  public Character(string charName, string charPlayer, string charOccupation, string charBirthplace, string charResidence, int charAge)
-        {
-
-            RandomizeChar = false;
-            CharName = charName;
-            CharPlayer = charPlayer;
-            CharBirthplace = charBirthplace;
-            CharResidence = charResidence;
-        }
-
-        public Character() // Create a randomized character
-        {
-            string empty = "";
-            CharSex = RollingDices(3); // 1 = male /// 2 = female;
-            RandomizeChar = true;
-            CharBirthplace = empty;
-            CharResidence = empty;
-            CharName = empty;
-            CharPlayer = empty;
-
-        }*/
-
         public string SelectName()
         {
             string name = "";

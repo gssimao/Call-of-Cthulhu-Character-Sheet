@@ -9,20 +9,6 @@ namespace CharacterCreation
     class Antiquarian : Characteristic
     {
         public readonly string _occupationTitle = "Antiquarian";
-        public int _occupationSkillPoints;
-        public int OccupationSkillPoints
-        {
-            get
-            {
-                return _occupationSkillPoints;
-            }
-
-            set
-            {
-                _occupationSkillPoints = value;
-            }
-
-        }
 
         public readonly string _creditRating = "10 - 40";
         public string _suggestedContacts = "Zoos, cicus, folk, patrons, actors";
@@ -30,10 +16,11 @@ namespace CharacterCreation
         public int SelectMoreSkills = 1;
         public Antiquarian()
         {
-            OccupationSkillPoints = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
         public Antiquarian(bool random) // this is a random accountant
         {
+            CharAge = 0;
             _occupationName = _occupationTitle;
             _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
@@ -60,7 +47,7 @@ namespace CharacterCreation
             CharHP = randomSet;
 
             //occupation point skill calculation
-            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
         }
 
     }

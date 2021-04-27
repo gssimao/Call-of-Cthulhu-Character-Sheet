@@ -9,20 +9,6 @@ namespace CharacterCreation
     class Alienist : Characteristic
     {
         public readonly string _occupationTitle = "Alienist";
-        public int _occupationSkillPoints;
-        public int OccupationSkillPoints
-        {
-            get
-            {
-                return _occupationSkillPoints;
-            }
-
-            set
-            {
-                _occupationSkillPoints = value;
-            }
-
-        }
 
         public readonly string _creditRating = "10 - 60";
         public readonly string _suggestedContacts = "Others in the field of mental illness, medical doctors, and occasionally detectives in law enforcement.";
@@ -30,10 +16,11 @@ namespace CharacterCreation
         public int SelectMoreSkills = 0;
         public Alienist()
         {
-            OccupationSkillPoints = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(this.OccupationName ,this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
         public Alienist(bool random) // this is a random accountant
         {
+            CharAge = 0;
             _occupationName = _occupationTitle;
             _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
@@ -60,7 +47,7 @@ namespace CharacterCreation
             CharHP = randomSet;
 
             //occupation point skill calculation
-            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
         }
 
     }

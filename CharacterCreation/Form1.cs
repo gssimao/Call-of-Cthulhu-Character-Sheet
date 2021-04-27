@@ -12,6 +12,7 @@ namespace CharacterCreation
 {
     public partial class character : Form
     {
+        public int totalSkill = 0;
         public static readonly Random DiceRandom = new Random();
         public character()
         {
@@ -187,6 +188,465 @@ namespace CharacterCreation
 
         }
 
+
+        ///Skills here
+        private void ElecRepairSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void DriveSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void DodgeSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void DisguiseSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void MythosSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void CreditRatingSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void ClimbSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void CharmSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank2Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank1Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void ArtCraftSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void ArchaeologySkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void AppraiseSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void nthropologySkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void AccountingSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void CthulhuMythosLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void OwnLanguageSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank7Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank6Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void LanguageSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void JumpSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void IntimidateSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void HistorySkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void FirstAidSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank5Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void HeavyFirearmSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void FirearmSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank4Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank3Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void FightingSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void FastTalkSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void RideSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void PsychoanalysisSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void PsychologySkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void PilotSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void PersuadeSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void OpHvMachineSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void OccultSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void NavigateSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void NatWorldSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void MedicineSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void MechRepairSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void LocksmithSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void ListenSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void LibraryUseSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void LawSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank14Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank13Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank12Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank11Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank10Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void TrackSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void ThrowSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void SwimSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void SurvivalSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void StealthSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void SpotHiddenSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void SleightOfHandSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank9Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void Blank8Skill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+
+        private void ScienceSkill_TextChanged(object sender, EventArgs e)
+        {
+            SkillPointsToUse.Text = CompareSkillsLeft().ToString();
+        }
+        /// skills ends
+
+        //skill links
+        private void AccountingLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(AccountingLabel);
+        }
+
+        private void ArtCrftLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(ArtAndCrftLabel);
+        }
+
+        private void ArchaeologyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(ArchaeologyLabel);
+        }
+
+        private void AppraiseLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(AppraiseLabel);
+        }
+
+        private void AnthropologyLabal_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(AnthropologyLabal);
+        }
+
+        private void ElecRepairLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(ElecRepairLabel);
+        }
+
+        private void DriveAutoLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(DriveAutoLabel);
+        }
+
+        private void DodgeLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Dodge12Label);
+        }
+
+        private void DisguiseLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(DisguiseLabel);
+        }
+
+        private void CreditRatingLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(CreditRatingLabel);
+        }
+
+        private void ClimbLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Climb12Label);
+        }
+
+        private void CharmLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Charm12Label);
+        }
+
+        private void LanguageOwnLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(LanguageOwnLabel);
+        }
+
+        private void LanguageLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(LanguageOtherLabel);
+        }
+
+        private void JumpLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Jump123Label);
+        }
+
+        private void IntimidateLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(IntimidateLabel);
+        }
+
+        private void HistoryLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(HistoryLabel);
+        }
+
+        private void FirstAidLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(FirstAidLabel);
+        }
+
+        private void FirearmHeavyLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(FirearmHeavyLabel);
+        }
+
+        private void FireamsLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(FireamsLabel);
+        }
+
+        private void FightingLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(FightingLabel);
+        }
+
+        private void FastTalkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(FastTalkLabel);
+        }
+
+        private void ScienceLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(ScienceLabel);
+        }
+
+        private void TrackLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Track12Label);
+        }
+
+        private void ThrowLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Throw12Label);
+        }
+
+        private void SwimLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(Swim123Label);
+        }
+
+        private void SurvivalLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(SurvivalLabel);
+        }
+
+        private void StealthLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(StealthLabel);
+        }
+
+        private void SpotHiddenLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(SpotHiddenLabel);
+        }
+
+        private void SleightofHandLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CheckFails(SleightofHandLabel);
+        }
+        /// skill links end
         ////// input and ther stuff here
         private void CallDiceRoller_Click(object sender, EventArgs e) // Roll Dice
         {
@@ -226,8 +686,6 @@ namespace CharacterCreation
 
         private void Randomize_Click(object sender, EventArgs e)
         {
-            //object InvestigatorPlayer;
-            // InvestigatorPlayer = Activator.CreateInstance(CreateOccupation("Accountant"));
             string newOccupation = SelectOccupation();
 
             //OccupationList.Add(new Accountant(true) {CharName = "Steve"});
@@ -237,23 +695,22 @@ namespace CharacterCreation
             OccupationList.Add(new Actor(true));
             OccupationList.Add(new AgencyDetective(true));
             OccupationList.Add(new Alienist(true));
+            OccupationList.Add(new Antiquarian(true));
             //OccupationList.Add(new Acrobat(true));
             int index = DiceRandom.Next(OccupationList.Count); // chose a random from the list
 
 
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
-            ////////// I could make a list of all the skills and check for every skill in the occultist skill array. From there I need a function to show current points and mark the ones
-            /// I have selected from the occupation list.
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //call on investigator propertites
 
             CharOccupation.Text = newOccupation;
             Notes.Text = "Suggested Skills\r" + OccupationList[index].SuggestedSkills + "\r" + "Contacts\r" + OccupationList[index].Contacts;
             CharBirthplace.Text = OccupationList[index].CharBirthplace;
             CharResidence.Text = OccupationList[index].CharResidence;
+
             CharAge.Text = OccupationList[index].CharAge.ToString();
 
+            SkillPointsLeft.Text = OccupationList[index].SkillpointsAvailable.ToString();
+            SkillPointsToUse.Text = OccupationList[index].SkillpointsAvailable.ToString();
+            totalSkill = OccupationList[index].SkillpointsAvailable;
             CharSTR.Text = OccupationList[index].charSTR.ToString();
             CharDEX.Text = OccupationList[index].charDEX.ToString();
             CharPOW.Text = OccupationList[index].charPOW.ToString();
@@ -942,6 +1399,56 @@ namespace CharacterCreation
             int roll;
             roll = DiceRandom.Next(1, max);
             return roll;
+        }
+
+
+        public int CompareSkillsLeft()
+        {
+            int newTotal = 0;
+            foreach(Control f in this.Controls)
+            {
+                if(f is TextBox)
+                {
+                    string Name = f.Name.ToString(); // grab the name of the textBox
+                    string Last5Digits = Name.Substring(Name.Length - 5); // check the last 5 digits and save it 
+                    if(Last5Digits == "Skill") // if the last 5 Digits are == Skill than its a skill
+                    {
+                        if (int.TryParse(f.Text, out int skill)) // see if there are any numbers in there and convert them into an int
+                        {
+                            newTotal += skill; // store them in new total
+                        }
+                    }
+                }
+            }
+            return totalSkill - newTotal; // amount of skill points left to be assigned
+        }
+
+        public void CheckFails(LinkLabel Skill)
+        {
+            int fail = 0;
+            int critFail = 0;
+            string Name = Skill.Name;
+            string Compare1 = new string(Name.Take(7).ToArray());
+
+            foreach (Control f in this.Controls)
+            {
+                if (f is TextBox)
+                {
+                    string TextBoxName = f.Name.ToString();
+                    string Compare2 =  new string (TextBoxName.Take(7).ToArray());
+                    if (Compare1 == Compare2)
+                    {
+                        if (int.TryParse(f.Text, out int skill))
+                        {
+                            fail = (int)Math.Floor((double)(skill/2));
+                            critFail = (int)Math.Floor((double)(skill / 5));
+                        }
+                    }
+                }
+            }
+            FailCheck.Text = fail.ToString();
+            FifthValue.Text = critFail.ToString();
+            SkillName.Text = Skill.Name;
         }
 
 

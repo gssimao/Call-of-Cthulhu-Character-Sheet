@@ -9,20 +9,6 @@ namespace CharacterCreation
     class Accountant : Characteristic
     {
         public readonly string _occupationTitle = "Accountant";
-        public int _occupationSkillPoints;
-        public int OccupationSkillPoints
-        {
-            get
-            {
-                return _occupationSkillPoints;
-            }
-
-            set
-            {
-                _occupationSkillPoints = value;
-            }
-
-        }
 
         public readonly string _creditRating = "30 - 70";
         public readonly string _suggestedContacts = "Business associates, legal professions, financial sector(bankers, other accountants)";
@@ -30,10 +16,11 @@ namespace CharacterCreation
         public int SelectMoreSkills = 2;
         public Accountant()
         {
-            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(_occupationName, this.charSTR, this.charDEX, this.charPOW, this.charCON, this.charAPP, this.charEDU, this.charSIZ, this.charINT);
         }
         public Accountant(bool random) // this is a random accountant
         {
+            CharAge = 0;
             _occupationName = _occupationTitle;
             _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;
@@ -42,7 +29,6 @@ namespace CharacterCreation
             //base character randomization
             CharName = SelectName();
             CharResidence = SelectResidence();
-
             //characteristic randomization
             RandomizeChar = random;
             int randomSet = 999;
@@ -60,7 +46,7 @@ namespace CharacterCreation
             CharHP = randomSet;
 
             //occupation point skill calculation
-            OccupationSkillPoints = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
+            SkillpointsAvailable = calculateSkillPointsAvailable(_occupationName, CharSTR, CharDEX, CharPOW, CharCON, CharAPP, CharEDU, CharSIZ, CharINT);
         }
 
     }
