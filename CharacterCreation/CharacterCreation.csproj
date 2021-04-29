@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Randomizer.cs" />
+    <Compile Include="JustSkillPoints.cs" />
+    <Compile Include="JustCharacteristic.cs" />
     <Compile Include="Antiquarian.cs" />
     <Compile Include="AnimalTrainer.cs" />
     <Compile Include="Alienist.cs" />

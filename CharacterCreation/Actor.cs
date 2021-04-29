@@ -22,6 +22,7 @@ namespace CharacterCreation
         public Actor(bool random) // this is a random accountant
         {
             CharAge = 0;
+            creditRating = _creditRating;
             _occupationName = _occupationTitle;
             _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;

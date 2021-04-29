@@ -8,6 +8,7 @@ namespace CharacterCreation
 {
     class Characteristic : Character
     {
+        public string creditRating;
         public string Contacts;
         public int charSTR;
         public int charDEX;
@@ -803,8 +804,7 @@ namespace CharacterCreation
                     return EDU * 4;
 
                 default:
-                    Console.WriteLine("The input does not match none of the occupations");
-                    break;
+                    return EDU * 4;
             }
             
             return 0;

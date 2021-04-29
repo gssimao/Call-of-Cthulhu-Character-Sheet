@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace CharacterCreation
 {
-    public class Character
+    public class Character : Randomizer
     {
-        public static readonly Random DiceRandom = new Random();
         public bool RandomizeChar = false;
 
-        string charName;
+        private string charName;
         public string CharName
         {
             get
@@ -31,7 +30,7 @@ namespace CharacterCreation
             }
         }
 
-        string charPlayer;
+        private string charPlayer;
         public string CharPlayer
         {
             get
@@ -44,7 +43,7 @@ namespace CharacterCreation
             }
         }
 
-        string charBirthplace;
+        private string charBirthplace;
         public string CharBirthplace
         {
             get
@@ -63,7 +62,7 @@ namespace CharacterCreation
                 }
             }
         }
-        string charResidence;
+        private string charResidence;
         public string CharResidence
         {
             get
@@ -83,7 +82,7 @@ namespace CharacterCreation
             }
         }
 
-        int charSex;
+        private int charSex;
         public int CharSex
         {
             get
@@ -745,13 +744,6 @@ namespace CharacterCreation
             
 
             return charResidense;
-        }
-
-        public int RollingDices(int max)
-        {
-            int roll;
-            roll = DiceRandom.Next(1, max);
-            return roll;
         }
 
 

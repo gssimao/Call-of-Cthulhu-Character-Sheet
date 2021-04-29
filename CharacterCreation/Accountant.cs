@@ -9,7 +9,7 @@ namespace CharacterCreation
     class Accountant : Characteristic
     {
         public readonly string _occupationTitle = "Accountant";
-
+        
         public readonly string _creditRating = "30 - 70";
         public readonly string _suggestedContacts = "Business associates, legal professions, financial sector(bankers, other accountants)";
         public string OccupationSkills = "accounting, law, library use, listen, persuade, spot hidden";
@@ -21,6 +21,7 @@ namespace CharacterCreation
         public Accountant(bool random) // this is a random accountant
         {
             CharAge = 0;
+            creditRating = _creditRating;
             _occupationName = _occupationTitle;
             _suggestedSkills = OccupationSkills;
             Contacts = _suggestedContacts;

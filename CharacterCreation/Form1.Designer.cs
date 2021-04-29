@@ -78,7 +78,7 @@ namespace CharacterCreation
             this.CallDiceRoller = new System.Windows.Forms.Button();
             this.Male = new System.Windows.Forms.CheckBox();
             this.Female = new System.Windows.Forms.CheckBox();
-            this.saveChar = new System.Windows.Forms.Button();
+            this.RandomizeCharacteristic = new System.Windows.Forms.Button();
             this.CharLuck = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.CharSanity = new System.Windows.Forms.TextBox();
@@ -220,13 +220,14 @@ namespace CharacterCreation
             this.label29 = new System.Windows.Forms.Label();
             this.CriticalFailCheck = new System.Windows.Forms.Label();
             this.SkillName = new System.Windows.Forms.Label();
+            this.CalculateSkillPoint = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Name
             // 
             this.Name.AutoSize = true;
             this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name.Location = new System.Drawing.Point(235, 27);
+            this.Name.Location = new System.Drawing.Point(284, 27);
             this.Name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(93, 25);
@@ -242,7 +243,7 @@ namespace CharacterCreation
             // CharName
             // 
             this.CharName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CharName.Location = new System.Drawing.Point(345, 24);
+            this.CharName.Location = new System.Drawing.Point(394, 24);
             this.CharName.Margin = new System.Windows.Forms.Padding(6);
             this.CharName.Name = "CharName";
             this.CharName.Size = new System.Drawing.Size(489, 30);
@@ -252,7 +253,7 @@ namespace CharacterCreation
             // CharPlayer
             // 
             this.CharPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CharPlayer.Location = new System.Drawing.Point(345, 66);
+            this.CharPlayer.Location = new System.Drawing.Point(394, 66);
             this.CharPlayer.Margin = new System.Windows.Forms.Padding(6);
             this.CharPlayer.Name = "CharPlayer";
             this.CharPlayer.Size = new System.Drawing.Size(489, 30);
@@ -263,7 +264,7 @@ namespace CharacterCreation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(266, 69);
+            this.label1.Location = new System.Drawing.Point(315, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 25);
@@ -411,12 +412,12 @@ namespace CharacterCreation
             // Randomize
             // 
             this.Randomize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Randomize.Location = new System.Drawing.Point(119, 20);
+            this.Randomize.Location = new System.Drawing.Point(29, 61);
             this.Randomize.Margin = new System.Windows.Forms.Padding(6);
             this.Randomize.Name = "Randomize";
-            this.Randomize.Size = new System.Drawing.Size(95, 42);
+            this.Randomize.Size = new System.Drawing.Size(127, 33);
             this.Randomize.TabIndex = 19;
-            this.Randomize.Text = "Randomize Investigator";
+            this.Randomize.Text = "Randomize All";
             this.Randomize.UseVisualStyleBackColor = true;
             this.Randomize.Click += new System.EventHandler(this.Randomize_Click);
             // 
@@ -726,16 +727,16 @@ namespace CharacterCreation
             this.Female.UseVisualStyleBackColor = true;
             this.Female.CheckedChanged += new System.EventHandler(this.Female_CheckedChanged);
             // 
-            // saveChar
+            // RandomizeCharacteristic
             // 
-            this.saveChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveChar.Location = new System.Drawing.Point(18, 20);
-            this.saveChar.Name = "saveChar";
-            this.saveChar.Size = new System.Drawing.Size(82, 44);
-            this.saveChar.TabIndex = 53;
-            this.saveChar.Text = "Calculate / Save";
-            this.saveChar.UseVisualStyleBackColor = true;
-            this.saveChar.Click += new System.EventHandler(this.saveChar_Click);
+            this.RandomizeCharacteristic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RandomizeCharacteristic.Location = new System.Drawing.Point(29, 10);
+            this.RandomizeCharacteristic.Name = "RandomizeCharacteristic";
+            this.RandomizeCharacteristic.Size = new System.Drawing.Size(127, 42);
+            this.RandomizeCharacteristic.TabIndex = 53;
+            this.RandomizeCharacteristic.Text = "Randomize Characteristic";
+            this.RandomizeCharacteristic.UseVisualStyleBackColor = true;
+            this.RandomizeCharacteristic.Click += new System.EventHandler(this.saveChar_Click);
             // 
             // CharLuck
             // 
@@ -1715,6 +1716,7 @@ namespace CharacterCreation
             this.SkillPointsLeft.Name = "SkillPointsLeft";
             this.SkillPointsLeft.Size = new System.Drawing.Size(68, 30);
             this.SkillPointsLeft.TabIndex = 133;
+            this.SkillPointsLeft.TextChanged += new System.EventHandler(this.SkillPointsLeft_TextChanged);
             // 
             // label27
             // 
@@ -2395,11 +2397,23 @@ namespace CharacterCreation
             this.SkillName.TabIndex = 200;
             this.SkillName.Text = "SkillName";
             // 
+            // CalculateSkillPoint
+            // 
+            this.CalculateSkillPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculateSkillPoint.Location = new System.Drawing.Point(174, 12);
+            this.CalculateSkillPoint.Name = "CalculateSkillPoint";
+            this.CalculateSkillPoint.Size = new System.Drawing.Size(96, 84);
+            this.CalculateSkillPoint.TabIndex = 201;
+            this.CalculateSkillPoint.Text = "Calculate Skill Points";
+            this.CalculateSkillPoint.UseVisualStyleBackColor = true;
+            this.CalculateSkillPoint.Click += new System.EventHandler(this.CalculateSkillPoint_Click);
+            // 
             // character
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 1020);
+            this.Controls.Add(this.CalculateSkillPoint);
             this.Controls.Add(this.SkillName);
             this.Controls.Add(this.CriticalFailCheck);
             this.Controls.Add(this.label29);
@@ -2541,7 +2555,7 @@ namespace CharacterCreation
             this.Controls.Add(this.label21);
             this.Controls.Add(this.CharLuck);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.saveChar);
+            this.Controls.Add(this.RandomizeCharacteristic);
             this.Controls.Add(this.Female);
             this.Controls.Add(this.Male);
             this.Controls.Add(this.CallDiceRoller);
@@ -2650,7 +2664,7 @@ namespace CharacterCreation
         private System.Windows.Forms.Button CallDiceRoller;
         private System.Windows.Forms.CheckBox Male;
         private System.Windows.Forms.CheckBox Female;
-        private System.Windows.Forms.Button saveChar;
+        private System.Windows.Forms.Button RandomizeCharacteristic;
         private System.Windows.Forms.TextBox CharLuck;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox CharSanity;
@@ -2792,6 +2806,7 @@ namespace CharacterCreation
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label CriticalFailCheck;
         private System.Windows.Forms.Label SkillName;
+        private System.Windows.Forms.Button CalculateSkillPoint;
     }
 }
 

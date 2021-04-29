@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CharacterCreation
 {
-    public partial class character : Form
+    public partial class character : Form , IRandomizer
     {
         public int totalSkill = 0;
         public static readonly Random DiceRandom = new Random();
@@ -646,6 +646,10 @@ namespace CharacterCreation
         {
             CheckFails(SleightofHandLabel);
         }
+        private void SkillPointsLeft_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         /// skill links end
         ////// input and ther stuff here
         private void CallDiceRoller_Click(object sender, EventArgs e) // Roll Dice
@@ -674,14 +678,46 @@ namespace CharacterCreation
 
 
 
-        private void saveChar_Click(object sender, EventArgs e) // save character Button
+        private void saveChar_Click(object sender, EventArgs e) // randomize Characteristics Only
         {
-            //Character Investigator = new Character(CharName.ToString(), CharPlayer.ToString(), CharOccupation.ToString(), CharBirthplace.ToString(), CharResidence.ToString(), int.Parse(CharAge.Text));
-  /*          Characteristic BaseCharacteristc = new Characteristic(CheckIfEmpty(CharSTR.ToString()), CheckIfEmpty(CharDEX.ToString()), CheckIfEmpty(CharPOW.ToString()),
-                                                                  CheckIfEmpty(CharCON.ToString()), CheckIfEmpty(CharAPP.ToString()), CheckIfEmpty(CharEDU.ToString()),
-                                                                  CheckIfEmpty(CharSIZ.ToString()), CheckIfEmpty(CharINT.ToString()), CheckIfEmpty(CharLuck.ToString()),
-                                                                  CheckIfEmpty(CharMoveRate.ToString()));*/
-               // I need a better solution for this part
+            JustCharacteristic Investigator = new JustCharacteristic();
+
+            CharSTR.Text = Investigator.charSTR.ToString();
+            CharDEX.Text = Investigator.charDEX.ToString();
+            CharPOW.Text = Investigator.charPOW.ToString();
+            CharCON.Text = Investigator.charCON.ToString();
+            CharAPP.Text = Investigator.charAPP.ToString();
+            CharEDU.Text = Investigator.charEDU.ToString();
+            CharSIZ.Text = Investigator.charSIZ.ToString();
+            CharINT.Text = Investigator.charINT.ToString();
+
+        }
+        private void CalculateSkillPoint_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(CharSTR.Text) || String.IsNullOrEmpty(CharDEX.Text) || String.IsNullOrEmpty(CharPOW.Text) || String.IsNullOrEmpty(CharCON.Text) || String.IsNullOrEmpty(CharAPP.Text) || String.IsNullOrEmpty(CharEDU.Text) || String.IsNullOrEmpty(CharINT.Text))
+            {
+                Notes.Text = "fill all of your Characteristics to start calculation STR, DEX, POW, CON, APP, EDU, and INT";
+            }
+            else if (String.IsNullOrEmpty(CharOccupation.Text))
+            {
+                Notes.Text = "You need an Occupation to start, you can check all occupations in the Book Call of Cthulhu 7E or trying the Randomize All Button";
+            }
+            else
+            {
+                if (int.TryParse(CharSTR.Text, out int STR));
+                if (int.TryParse(CharDEX.Text, out int DEX));
+                if (int.TryParse(CharPOW.Text, out int POW));
+                if (int.TryParse(CharCON.Text, out int CON));
+                if (int.TryParse(CharAPP.Text, out int APP));
+                if (int.TryParse(CharEDU.Text, out int EDU));
+                if (int.TryParse(CharINT.Text, out int INT));
+                int SIZ = 0;
+                Notes.Text = "Notes";
+               JustSkillPoints Investigator = new JustSkillPoints(CharOccupation.Text ,STR, DEX, POW, CON, APP, SIZ, EDU, INT);
+                SkillPointsLeft.Text = Investigator.SkillpointsAvailable.ToString();
+                SkillPointsToUse.Text = Investigator.SkillpointsAvailable.ToString();
+                totalSkill = Investigator.SkillpointsAvailable;
+            }
         }
 
         private void Randomize_Click(object sender, EventArgs e)
@@ -707,9 +743,11 @@ namespace CharacterCreation
             CharResidence.Text = OccupationList[index].CharResidence;
 
             CharAge.Text = OccupationList[index].CharAge.ToString();
+            CreditRatingSkill.Text = OccupationList[index].creditRating;
 
             SkillPointsLeft.Text = OccupationList[index].SkillpointsAvailable.ToString();
             SkillPointsToUse.Text = OccupationList[index].SkillpointsAvailable.ToString();
+
             totalSkill = OccupationList[index].SkillpointsAvailable;
             CharSTR.Text = OccupationList[index].charSTR.ToString();
             CharDEX.Text = OccupationList[index].charDEX.ToString();
@@ -744,10 +782,7 @@ namespace CharacterCreation
             {
                 return CompleteParse;
             }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
         public string SelectOccupation()
         {
@@ -868,7 +903,66 @@ namespace CharacterCreation
 
             return charOccupation;
         }
-        
+
+        public int RollingDices(int max)
+        {
+            int roll;
+            roll = DiceRandom.Next(1, max);
+            return roll;
+        }
+
+
+        public int CompareSkillsLeft()
+        {
+            int newTotal = 0;
+            foreach (Control f in this.Controls)
+            {
+                if (f is TextBox)
+                {
+                    string Name = f.Name.ToString(); // grab the name of the textBox
+                    string Last5Digits = Name.Substring(Name.Length - 5); // check the last 5 digits and save it 
+                    if (Last5Digits == "Skill") // if the last 5 Digits are == Skill than its a skill
+                    {
+                        if (int.TryParse(f.Text, out int skill)) // see if there are any numbers in there and convert them into an int
+                        {
+                            newTotal += skill; // store them in new total
+                        }
+                    }
+                }
+            }
+            return totalSkill - newTotal; // amount of skill points left to be assigned
+        }
+
+        public void CheckFails(LinkLabel Skill)
+        {
+            int fail = 0;
+            int critFail = 0;
+            string Name = Skill.Name;
+            string Compare1 = new string(Name.Take(7).ToArray());
+
+            foreach (Control f in this.Controls)
+            {
+                if (f is TextBox)
+                {
+                    string TextBoxName = f.Name.ToString();
+                    string Compare2 = new string(TextBoxName.Take(7).ToArray());
+                    if (Compare1 == Compare2)
+                    {
+                        if (int.TryParse(f.Text, out int skill))
+                        {
+                            fail = (int)Math.Floor((double)(skill / 2));
+                            critFail = (int)Math.Floor((double)(skill / 5));
+                        }
+                    }
+                }
+            }
+            FailCheck.Text = fail.ToString();
+            FifthValue.Text = critFail.ToString();
+            SkillName.Text = Skill.Name;
+        }
+
+
+
         //I'll have to make this a different way, maybe an if statement inside the form button?
         /*public Type CreateOccupation(string Occupation)
         {
@@ -1394,62 +1488,7 @@ namespace CharacterCreation
             
         } 
         */
-        public int RollingDices(int max)
-        {
-            int roll;
-            roll = DiceRandom.Next(1, max);
-            return roll;
-        }
 
-
-        public int CompareSkillsLeft()
-        {
-            int newTotal = 0;
-            foreach(Control f in this.Controls)
-            {
-                if(f is TextBox)
-                {
-                    string Name = f.Name.ToString(); // grab the name of the textBox
-                    string Last5Digits = Name.Substring(Name.Length - 5); // check the last 5 digits and save it 
-                    if(Last5Digits == "Skill") // if the last 5 Digits are == Skill than its a skill
-                    {
-                        if (int.TryParse(f.Text, out int skill)) // see if there are any numbers in there and convert them into an int
-                        {
-                            newTotal += skill; // store them in new total
-                        }
-                    }
-                }
-            }
-            return totalSkill - newTotal; // amount of skill points left to be assigned
-        }
-
-        public void CheckFails(LinkLabel Skill)
-        {
-            int fail = 0;
-            int critFail = 0;
-            string Name = Skill.Name;
-            string Compare1 = new string(Name.Take(7).ToArray());
-
-            foreach (Control f in this.Controls)
-            {
-                if (f is TextBox)
-                {
-                    string TextBoxName = f.Name.ToString();
-                    string Compare2 =  new string (TextBoxName.Take(7).ToArray());
-                    if (Compare1 == Compare2)
-                    {
-                        if (int.TryParse(f.Text, out int skill))
-                        {
-                            fail = (int)Math.Floor((double)(skill/2));
-                            critFail = (int)Math.Floor((double)(skill / 5));
-                        }
-                    }
-                }
-            }
-            FailCheck.Text = fail.ToString();
-            FifthValue.Text = critFail.ToString();
-            SkillName.Text = Skill.Name;
-        }
 
 
     }
