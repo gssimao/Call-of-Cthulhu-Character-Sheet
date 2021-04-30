@@ -13,6 +13,7 @@ namespace CharacterCreation
     public partial class character : Form , IRandomizer
     {
         public int totalSkill = 0;
+        bool notesSet = false;
         public static readonly Random DiceRandom = new Random();
         public character()
         {
@@ -697,10 +698,12 @@ namespace CharacterCreation
             if (String.IsNullOrEmpty(CharSTR.Text) || String.IsNullOrEmpty(CharDEX.Text) || String.IsNullOrEmpty(CharPOW.Text) || String.IsNullOrEmpty(CharCON.Text) || String.IsNullOrEmpty(CharAPP.Text) || String.IsNullOrEmpty(CharEDU.Text) || String.IsNullOrEmpty(CharINT.Text))
             {
                 Notes.Text = "fill all of your Characteristics to start calculation STR, DEX, POW, CON, APP, EDU, and INT";
+                notesSet = false;
             }
             else if (String.IsNullOrEmpty(CharOccupation.Text))
             {
                 Notes.Text = "You need an Occupation to start, you can check all occupations in the Book Call of Cthulhu 7E or trying the Randomize All Button";
+                notesSet = false;
             }
             else
             {
@@ -712,7 +715,10 @@ namespace CharacterCreation
                 if (int.TryParse(CharEDU.Text, out int EDU));
                 if (int.TryParse(CharINT.Text, out int INT));
                 int SIZ = 0;
-                Notes.Text = "Notes";
+                if(!notesSet)
+                {
+                    Notes.Text = "Notes";
+                }
                JustSkillPoints Investigator = new JustSkillPoints(CharOccupation.Text ,STR, DEX, POW, CON, APP, SIZ, EDU, INT);
                 SkillPointsLeft.Text = Investigator.SkillpointsAvailable.ToString();
                 SkillPointsToUse.Text = Investigator.SkillpointsAvailable.ToString();
@@ -722,9 +728,8 @@ namespace CharacterCreation
 
         private void Randomize_Click(object sender, EventArgs e)
         {
-            string newOccupation = SelectOccupation();
+            //string newOccupation = SelectOccupation();
 
-            //OccupationList.Add(new Accountant(true) {CharName = "Steve"});
             List<Characteristic> OccupationList = new List<Characteristic>();
             OccupationList.Add(new Accountant(true));
             OccupationList.Add(new Acrobat(true));
@@ -732,13 +737,111 @@ namespace CharacterCreation
             OccupationList.Add(new AgencyDetective(true));
             OccupationList.Add(new Alienist(true));
             OccupationList.Add(new Antiquarian(true));
-            //OccupationList.Add(new Acrobat(true));
+            OccupationList.Add(new AntiqueDealer(true));
+            OccupationList.Add(new Archaeologist(true));
+            OccupationList.Add(new Architect(true));
+            OccupationList.Add(new Artist(true));
+            OccupationList.Add(new AsylumAttendant(true));
+            OccupationList.Add(new Athlete(true));
+            OccupationList.Add(new Author(true));
+            OccupationList.Add(new Bartender(true));
+            OccupationList.Add(new BigGameHunter(true));
+            OccupationList.Add(new BountyHunter(true));
+            OccupationList.Add(new BookDealer(true));
+            OccupationList.Add(new Boxer(true));
+            OccupationList.Add(new Butler(true));
+            OccupationList.Add(new Clergy(true));
+            OccupationList.Add(new ComputerProgrammer(true));
+            OccupationList.Add(new Cowboy(true));
+            OccupationList.Add(new Cowgirl(true));
+            OccupationList.Add(new Craftsperson(true));
+            OccupationList.Add(new Assassin(true));
+            OccupationList.Add(new BankRobber(true));
+            OccupationList.Add(new Bootlegger(true));
+            OccupationList.Add(new Thug(true));
+            OccupationList.Add(new Burglar(true));
+            OccupationList.Add(new Fence(true));
+            OccupationList.Add(new Conman(true));
+            OccupationList.Add(new Forger(true));
+            OccupationList.Add(new Counterfeiter(true));
+            OccupationList.Add(new Smuggler(true));
+            OccupationList.Add(new Criminal(true));
+            OccupationList.Add(new StreetPunk(true));
+            OccupationList.Add(new GunMoll(true));
+            OccupationList.Add(new CultLeader(true));
+            OccupationList.Add(new Designer(true));
+            OccupationList.Add(new Driver(true));
+            OccupationList.Add(new DoctorOfMedicine(true));
+            OccupationList.Add(new Editor(true));
+            OccupationList.Add(new ElectedOfficial(true));
+            OccupationList.Add(new Engineer(true));
+            OccupationList.Add(new Entertainer(true));
+            OccupationList.Add(new Explorer(true));
+            OccupationList.Add(new Farmer(true));
+            OccupationList.Add(new FederalAgent(true));
+            OccupationList.Add(new FireFighter(true));
+            OccupationList.Add(new ForeignCorrespondent(true));
+            OccupationList.Add(new ForeignCorrespondent(true));
+            OccupationList.Add(new Gambler(true));
+            OccupationList.Add(new Gangster(true));
+            OccupationList.Add(new Gentleman(true));
+            OccupationList.Add(new Lady(true));
+            OccupationList.Add(new Hobo(true));
+            OccupationList.Add(new HospitalOrderly(true));
+            OccupationList.Add(new Journalist(true));
+            OccupationList.Add(new Judge(true));
+            OccupationList.Add(new LaboratoryAssistant(true));
+            OccupationList.Add(new Laborer(true));
+            OccupationList.Add(new Miner(true));
+            OccupationList.Add(new Lumberjack(true));
+            OccupationList.Add(new Lawyer(true));
+            OccupationList.Add(new Mechanic(true));
+            OccupationList.Add(new MilitaryOfficer(true));
+            OccupationList.Add(new Miner(true));
+            OccupationList.Add(new Missionary(true));
+            OccupationList.Add(new MountainClimber(true));
+            OccupationList.Add(new MuseumCurator(true));
+            OccupationList.Add(new Musician(true));
+            OccupationList.Add(new Nurse(true));
+            OccupationList.Add(new Occultist(true));
+            OccupationList.Add(new Outdoorsman(true));
+            OccupationList.Add(new Outdoorswoman(true));
+            OccupationList.Add(new Aviator(true));
+            OccupationList.Add(new Parapsychologist(true));
+            OccupationList.Add(new Pharmacist(true));
+            OccupationList.Add(new Photographer(true));
+            OccupationList.Add(new Pilot(true));
+            OccupationList.Add(new PoliceDetective(true));
+            OccupationList.Add(new Psychoanalyst(true));
+            OccupationList.Add(new Psychologist(true));
+            OccupationList.Add(new Researcher(true));
+            OccupationList.Add(new Prostitute(true));
+            OccupationList.Add(new Marine(true));
+            OccupationList.Add(new Intern(true));
+            OccupationList.Add(new Sailor(true));
+            OccupationList.Add(new Scientist(true));
+            OccupationList.Add(new Salesperson(true));
+            OccupationList.Add(new Secretary(true));
+            OccupationList.Add(new Shopkeeper(true));
+            OccupationList.Add(new Smuggler(true));
+            OccupationList.Add(new Soldier(true));
+            OccupationList.Add(new Spy(true));
+            OccupationList.Add(new Student(true));
+            OccupationList.Add(new Stuntman(true));
+            OccupationList.Add(new TribeMember(true));
+            OccupationList.Add(new Undertaker(true));
+            OccupationList.Add(new UnionActivist(true));
+            OccupationList.Add(new Waitress(true));
+            OccupationList.Add(new WhiteCollarWorker(true));
+            OccupationList.Add(new Zealot(true));
+            OccupationList.Add(new Zookeeper(true));
+
+
             int index = DiceRandom.Next(OccupationList.Count); // chose a random from the list
 
-
-
-            CharOccupation.Text = newOccupation;
+            CharOccupation.Text = OccupationList[index]._occupationName;
             Notes.Text = "Suggested Skills\r" + OccupationList[index].SuggestedSkills + "\r" + "Contacts\r" + OccupationList[index].Contacts;
+            notesSet = true;
             CharBirthplace.Text = OccupationList[index].CharBirthplace;
             CharResidence.Text = OccupationList[index].CharResidence;
 
